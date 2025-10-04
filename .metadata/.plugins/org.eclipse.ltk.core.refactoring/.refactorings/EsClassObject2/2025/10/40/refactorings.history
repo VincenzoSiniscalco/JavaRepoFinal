@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;it.itconsulting.ClassObject.model.ContoCorrent&apos; to &apos;ContoCorrente&apos;&#x0D;&#x0A;- Original project: &apos;EsClassObject2&apos;&#x0D;&#x0A;- Original element: &apos;it.itconsulting.ClassObject.model.ContoCorrent&apos;&#x0D;&#x0A;- Renamed element: &apos;it.itconsulting.ClassObject.model.ContoCorrente&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update fully qualified names in &apos;*&apos; files&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;ContoCorrent&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;it.itconsulting.ClassObject.model{ContoCorrent.java[ContoCorrent" matchStrategy="1" name="ContoCorrente" patterns="*" qualified="true" references="true" similarDeclarations="false" stamp="1759321555484" textual="false" version="1.0"/>
+</session>

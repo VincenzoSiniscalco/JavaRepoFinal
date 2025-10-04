@@ -1,0 +1,30 @@
+package it.itconsulting.ClassObject.model;
+
+public class Computer {
+	private String nomeModello;
+	private ComponentePc cpu;
+	private ComponentePc ram;
+	private ComponentePc memoria;
+	
+	public Computer(String nome,ComponentePc cpu, ComponentePc ram, ComponentePc memoria) {
+		nomeModello=nome;
+		this.cpu=cpu;
+		this.ram=ram;
+		this.memoria=memoria;
+	}
+	public double calcolaPrezzoTotale() {
+		return cpu.getPrezzo() + ram.getPrezzo() + memoria.getPrezzo();
+	}
+	public String getConfigurazione() {
+		return nomeModello + " "+ cpu.descrizione() + " "+ ram.descrizione() +" " + memoria.descrizione();
+	}
+//	
+//	public String stampaConfigurazione() {
+//		return "Computer: " + nomeModello + " - "+ cpu.descrizione() 
+//		+ " - " + ram.descrizione() + " - "  + " MEMORIA " + memoria.descrizione() 
+//		+ " :prezzo totale= " + calcolaPrezzoTotale();
+//	}
+	public void stampaConfigurazione() {
+		System.out.println(getConfigurazione());
+	}
+}

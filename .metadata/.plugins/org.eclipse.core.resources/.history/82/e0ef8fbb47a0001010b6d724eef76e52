@@ -1,0 +1,22 @@
+package it.itconsulting.ClassObject.model;
+
+public class Automobile {
+	private String modello;
+	private String marca;
+	private String targa;
+	private int cilindrata;
+	private Fabbrica fabbrica;
+	
+	public Automobile(String modello, String marca, String targa, int cilindrata, Fabbrica fabbrica) {
+		this.modello = modello;
+		this.marca = marca;
+		this.targa = targa;
+		this.cilindrata = cilindrata;
+		this.fabbrica = fabbrica;
+		fabbrica.produciAuto();
+	}
+	
+	public String infoAutomobile() {
+		return "Modello: "+ modello + "\n-marca: " + marca + "\n-targa: " + targa + "\n-cilindrata:" +  cilindrata + "\n-prodotta in: "+ fabbrica.infoFabbrica();
+	}
+}

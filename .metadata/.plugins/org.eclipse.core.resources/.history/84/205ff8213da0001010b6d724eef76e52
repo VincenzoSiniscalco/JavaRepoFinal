@@ -1,0 +1,76 @@
+package it.itconsulting.ClassObject.ui;
+
+import java.util.Scanner;
+import it.itconsulting.ClassObject.model.Bottiglia;
+import it.itconsulting.ClassObject.utilities.Constants;
+
+public class UsoBottiglia {
+	
+	public static void main(String[] args) {
+	
+		Scanner sc= new Scanner(System.in);
+		Bottiglia b= new Bottiglia(Constants.CONTENUTO_ACQUA, Constants.MATERIALE_PLASTICA, 2.0f, 0);
+		System.out.println("Inserire la quantità da aggiungere alla bottiglia di "+b.getMateriale() + " che contiene "+ b.getContenuto());
+		
+		b.aggiungi(sc);
+
+			
+		System.out.println("Inserire la quantità da aggiungere alla bottiglia di "+b.getMateriale() + " che contiene "+ b.getContenuto());
+
+		b.aggiungi(sc);
+
+		
+		String res=b.stampaBottiglia();
+		System.out.println(res);
+		
+		Bottiglia b2= new Bottiglia(Constants.CONTENUTO_VINO, Constants.MATERIALE_VETRO, 1.33f, 0);
+		
+		System.out.println("Inserire la quantità da aggiungere alla bottiglia di "+b2.getMateriale()+" che contiene " +b2.getContenuto());
+		b2.aggiungi(sc);
+
+		
+		
+		System.out.println("Inserire la quantità da aggiungere alla bottiglia di "+b2.getMateriale()+" che contiene " +b2.getContenuto());
+		b2.aggiungi(sc);
+
+		res=b2.stampaBottiglia();
+		System.out.println(res);
+		
+		
+		sc.close();
+	}
+	private static Bottiglia creaBottiglia(Scanner sc) {
+		if(sc!=null) {
+			System.out.println("La bottiglia contiene acqua o vino? (acqua/vino)");
+			String risposta= sc.nextLine();
+			if(risposta.toLowerCase()=="acqua") {
+				String contenuto = Constants.CONTENUTO_ACQUA;
+			}else if(risposta.toLowerCase()=="vino"){
+				String contenuto= Constants.CONTENUTO_VINO;
+			}else {
+				System.err.println("Bibita non corretta!");
+			}
+			System.out.println("La bottiglia è di plastica o vetro? (plastica/vetro)");
+			String materiale= sc.nextLine();
+			if(meteriale.toLowerCase()=="plastica") {
+				materiale = Constants.MATERIALE_PLASTICA;
+			}else if(meteriale.toLowerCase()=="vetro"){
+				 materiale= Constants.MATERIALE_VETRO;
+			}else {
+				System.err.println("Materiale non corretto!");
+			}
+			
+			System.out.println("Definire la capacità della bottiglia: ");
+			float maxCapacita= sc.nextFloat();
+			
+			System.out.println("Specificare quanto liquido è presente nella bottiglia: ");
+			float actQt=sc.nextFloat();
+			return new Bottiglia(contenuto,materiale,maxCapacita,actQt);
+
+		}else {
+			return null;
+		}
+		
+		
+	}
+}

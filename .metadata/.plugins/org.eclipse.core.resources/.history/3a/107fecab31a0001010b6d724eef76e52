@@ -1,0 +1,9 @@
+package it.itconsulting.ClassObject.utilities;
+
+public class Constants {
+	public final String CONTENUTO_AQCUA = "acqua";
+	public final String CONTENUTO_VINO = "vino";
+	public final String MATERIALE_VETRO = "vetro";
+	public final String MATERIALE_PLASTICA = "plastica";
+	
+}

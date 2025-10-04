@@ -1,0 +1,11 @@
+package com.azienda.classObject.model;
+
+public class Corso {
+	private String materia;
+	private String docente;
+	private String aula;
+	private int crediti;
+	private float f;
+	private boolean b;
+
+}

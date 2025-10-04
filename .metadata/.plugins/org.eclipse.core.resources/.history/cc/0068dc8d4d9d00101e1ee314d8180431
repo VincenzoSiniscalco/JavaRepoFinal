@@ -1,0 +1,50 @@
+package it.itconsulting.esercizi.ui;
+
+import java.util.Scanner;
+
+public class TestConfronto {
+
+	public static void main(String[] args) {
+		
+		Scanner sc= new Scanner(System.in);
+		
+		System.out.println("Inserire il primo numero intero: ");
+		int num1=sc.nextInt();
+		System.out.println("Inserire il secondonumero intero: ");
+		int num2=sc.nextInt();
+		
+		int res=confronta(num1,num2);
+		
+		switch(res) {
+		case -1:{
+			System.out.println("Il primo numero è minore del secondo.");
+			break;
+		}
+		case 0:{
+			System.out.println("I due numeri sono uguali.");
+			break;
+		}
+		case 1:{
+			System.out.println("Il primo numero è maggiore rispetto al secondo.");
+			break;
+		}
+		default:{
+			System.err.println("Formato dei dati non corretto.");
+		}
+		}
+		
+		
+		sc.close();
+	}
+
+	static int confronta(int a,int b) {
+		
+		if(a<b) {
+			return -1;
+		}else if(a==b){
+			return 0;
+		}else {
+		return 1;
+	}
+	}
+}

@@ -1,0 +1,92 @@
+package it.itconsulting.esercizi.ui;
+
+import java.util.Scanner;
+
+public class Calcolatrice {
+
+	public static void main(String[] args) {
+		
+		Scanner sc= new Scanner(System.in);
+		
+		int res,scelta;
+		double resDouble;
+		
+		do {
+		int operazione =controllo(sc);
+		
+		
+			System.out.println("Immettere il primo operando: ");
+			int num1= sc.nextInt();
+			System.out.println("Immettere il secondo operando: ");
+			int num2= sc.nextInt();
+			
+			switch (operazione) {
+			case 1:{
+				res=somma(num1,num2);
+				System.out.println(num1 + " + " + num2 + " = " + res);
+				break;
+			}
+			case 2:{
+				res=differenza(num1,num2);
+				System.out.println(num1 + " - " + num2 + " = " + res);
+				break;
+			}
+			case 3:{
+				res=moltiplicazione(num1,num2);
+				System.out.println(num1 + " * " + num2 + " = " + res);
+				break;
+			}
+			case 4:{
+				resDouble=divisione(num1,num2);
+				System.out.println(num1 + " - " + num2 + " = " + resDouble);
+				break;
+			}
+			
+			default:{
+			System.err.println("Errore di formato.");
+			}
+		
+		}
+			System.out.println("Se si vuole continuare, digitare un numero diverso da zero.");
+			scelta=sc.nextInt();
+		}while(scelta!=0);	
+			
+			sc.close();
+	
+	
+	}
+			
+	
+	static int somma(int a, int b) {
+		return a+b;	
+	}
+	static int differenza(int a,int b) {
+		return a-b;
+	}
+	static int moltiplicazione(int a, int b) {
+		return a*b;
+}
+	static double divisione(int a, int b) {
+		if(b==0) {
+			System.err.println("Errore: divisione per zero!");
+		}
+		return a/(double)b;
+		
+}
+	static int controllo(Scanner sc){
+		 int scelta;
+		
+		 do {
+			 System.out.println("Effettua una scelta per il calcolo:");
+			 System.out.println("1-Somma");
+			 System.out.println("2-Sottrazione");
+			 System.out.println("3-Moltiplicazione");
+			 System.out.println("4-Divisione");
+			 scelta=sc.nextInt();
+			 if(scelta<1 || scelta>4) {
+				 System.err.println("Scelta non valida: il valore dev'essere compreso tra 1 e 4!");
+			 }
+		}while(scelta<1 || scelta>4);
+		 return scelta;
+	}
+}

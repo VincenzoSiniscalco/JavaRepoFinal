@@ -1,0 +1,14 @@
+package com.azienda.classObject.ui;
+
+import com.azienda.classObject.model.Corso;
+
+public class TestCorso {
+
+	public static void main(String[] args) {
+		
+		Corso c= new Corso();
+		
+
+	}
+
+}

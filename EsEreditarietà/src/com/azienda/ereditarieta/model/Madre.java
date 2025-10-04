@@ -1,0 +1,23 @@
+package com.azienda.ereditarieta.model;
+
+public class Madre {
+	private String nomeMadre;
+
+	public Madre(String nomeMadre) {
+		super();
+		this.nomeMadre = nomeMadre;
+	}
+	public Madre() {
+		
+	}
+
+	public String getNomeMadre() {
+		return nomeMadre;
+	}
+
+	public void setNomeMadre(String nomeMadre) {
+		this.nomeMadre = nomeMadre;
+	}
+	
+	
+}

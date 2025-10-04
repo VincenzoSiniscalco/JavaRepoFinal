@@ -1,0 +1,76 @@
+package it.itconsulting.ClassObject.model;
+
+public class ContoCorrente {
+	private String numeroConto;
+	private float saldo;
+	private Banca banca;
+	
+	public ContoCorrente(String nc,float saldo,Banca banca) {
+		this.numeroConto=nc;
+		this.saldo=saldo;
+		this.banca=banca;
+	}
+	public String getNumeroConto() {
+		return numeroConto;
+	}
+
+	public void setNumeroConto(String numeroConto) {
+		this.numeroConto = numeroConto;
+	}
+
+	public float getSaldo() {
+		return saldo;
+	}
+
+	public void setSaldo(float saldo) {
+		this.saldo = saldo;
+	}
+
+	public Banca getBanca() {
+		return banca;
+	}
+
+	public void setBanca(Banca banca) {
+		this.banca = banca;
+	}
+	
+	public String descrizione() {
+		return numeroConto + " con saldo" + saldo + " aperto in " + banca.descrizione();
+	}
+	
+	public String getNomeBanca() {
+		if(banca.getNome()==null) {
+			System.out.println("La banca non ha nome.");
+		}
+		return banca.getNome();
+	}
+	
+	public void setNomeBanca(String nome) {
+		if(banca.getNome()==null) {
+			System.out.println("La banca non ha nome.");
+		}
+		banca.setNome(nome);
+	}
+	public String getCittaBanca() {
+		if(banca==null || banca.getIndirizzo()==null) {
+			System.out.println("Impossibile reperire la città della banca.");
+		}
+		return banca.getIndirizzo().getCitta();
+	}
+	public void setCittaBanca(String citta) {
+		if(banca==null || banca.getIndirizzo()==null) {
+			System.out.println("Impossibile associare la città alla banca.");
+		}
+		banca.getIndirizzo().setCitta(citta);
+	}
+
+	
+	
+//	public void versaPreleva(int importo) {
+//		if((saldo-importo)<0) {
+//			System.out.println("Operazione impossibile.");
+//		}
+//		saldo+=importo;
+//	}
+	
+}

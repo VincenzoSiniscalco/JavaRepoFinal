@@ -1,0 +1,49 @@
+package com.azienda.classObject.model;
+
+public class Corso2 {
+	
+	private Docente docente;
+	private String materia;
+	private String aula;
+	private int crediti;
+
+	public Corso2(Docente docente, String materia, String aula, int crediti) {
+		this.docente=docente;
+		this.materia=materia;
+		this.aula=aula;
+		this.crediti=crediti;
+	}
+	
+	public Docente getDocente() {
+		return docente;
+	}
+	
+	public void setDocente(Docente docente) {
+		this.docente=docente;
+	}
+
+	public String getMateria() {
+		return materia;
+	}
+
+	public void setMateria(String materia) {
+		this.materia = materia;
+	}
+
+	public String getAula() {
+		return aula;
+	}
+
+	public void setAula(String aula) {
+		this.aula = aula;
+	}
+
+	public int getCrediti() {
+		return crediti;
+	}
+
+	public void setCrediti(int crediti) {
+		this.crediti = crediti;
+	}
+	
+}

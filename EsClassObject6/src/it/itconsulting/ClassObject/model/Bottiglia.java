@@ -1,0 +1,95 @@
+package it.itconsulting.ClassObject.model;
+
+import java.util.Scanner;
+
+public class Bottiglia {
+
+	private String contenuto;
+	private String materiale;
+	private float maxCapacita;
+	private float actQt;
+
+	public Bottiglia(String contenuto, String materiale, float maxCap, float actQt) {
+		this.contenuto=contenuto;
+		this.materiale=materiale;
+		maxCapacita=maxCap;
+		this.actQt=actQt;
+	}
+
+	public String getContenuto() {
+		return contenuto;
+	}
+
+	public void setContenuto(String contenuto) {
+		this.contenuto = contenuto;
+	}
+
+	public String getMateriale() {
+		return materiale;
+	}
+
+	public void setMateriale(String materiale) {
+		this.materiale = materiale;
+	}
+
+	public float getMaxCapacita() {
+		return maxCapacita;
+	}
+
+	public void setMaxCapacita(float maxCapacita) {
+		this.maxCapacita = maxCapacita;
+	}
+
+	public float getActQt() {
+		return actQt;
+	}
+
+	public void setActQt(float actQt) {
+		this.actQt = actQt;
+	}
+
+	public boolean isEmpty() {
+		return actQt==0.0f;
+//		if(actQt==0) {
+//			return true;
+//		}
+//			return false;
+		}
+	
+	public boolean isFull() {
+		return actQt==maxCapacita;
+//		if(actQt==maxCapacita) {
+//			return true;
+//		}
+//		return false;
+	}
+	public String stampaBottiglia() {
+		return "Questa è una bottiglia di "+ materiale + " da " + maxCapacita + " e contiene "
+				+ actQt + " di " + contenuto + "\n";
+	}
+	public boolean aggiungi(Scanner sc) {
+		float incremento= sc.nextFloat();
+		sc.nextLine();
+		if(!isFull() && (actQt+incremento)<=maxCapacita) {
+			actQt+=incremento;
+			System.out.println(incremento + " litri entrano nella bottiglia.");
+			return true;
+		}
+			System.err.println(incremento +" litri non entrano nella bottiglia!");
+			return false;
+		}
+	
+	public boolean preleva(Scanner sc) {
+		float prelievo= sc.nextFloat();
+		sc.nextLine();
+		if(!isEmpty() && (prelievo<=actQt)) {
+			System.out.println("Prelevo " + prelievo + " litri dalla bottiglia");
+			actQt-=prelievo;
+			return true;
+		}
+			System.err.println("La bottiglia non ha " + prelievo + "litri da poter prelevare!");
+			return false;
+		
+	}
+
+}

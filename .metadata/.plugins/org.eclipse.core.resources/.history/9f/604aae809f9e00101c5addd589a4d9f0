@@ -1,0 +1,28 @@
+package com.azienda.classObject.ui;
+
+import com.azienda.classObject.model.Corso;
+
+public class TestCorso {
+
+	public static void main(String[] args) {
+
+		Corso c= new Corso();
+		Corso c2= new Corso("Carla","C","Aula 1",12);
+		Corso c3= new Corso("Claudio","PHP");
+		
+//		String doc= c3.docente; con docente attributo public
+		String doc= c3.getDocente(); //con metodo get
+		
+//		c3.docente="Giovanni"; con docente attributo public
+		c3.setDocente("Giovanni");
+		
+		c3.setCrediti(10);
+		int crediti= c3.aumentaCrediti(-7);
+		crediti= c3.aumentaCrediti(-4);
+		
+		
+		System.out.println("Programma terminato.");
+		
+	}
+
+}

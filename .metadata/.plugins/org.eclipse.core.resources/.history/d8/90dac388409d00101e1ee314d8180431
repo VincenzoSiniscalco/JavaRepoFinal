@@ -1,0 +1,16 @@
+package com.amazon.sintassiBase.ui;
+
+public class Esempio8 {
+
+	public static void main(String[] args) {
+		
+		metodo1();
+		System.out.println("Programma terminato.");
+
+	}
+
+	static void metodo1() {
+		System.out.println("Metodo 1.");
+	}
+	
+}

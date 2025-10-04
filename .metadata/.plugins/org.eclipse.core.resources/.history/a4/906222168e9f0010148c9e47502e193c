@@ -1,0 +1,11 @@
+package it.itconsulting.ClassObject.model;
+
+public class Bambino {
+	private String nome;
+	private String cognome;
+	private float altezza;
+	private static int contaBambini;
+	
+	
+	
+}

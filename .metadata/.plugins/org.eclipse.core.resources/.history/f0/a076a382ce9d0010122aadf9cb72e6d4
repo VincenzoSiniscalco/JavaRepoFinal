@@ -1,0 +1,46 @@
+package it.itconsulting.esercizi.ui;
+
+import java.util.Scanner;
+
+public class TestStampa {
+
+	public static void main(String[] args) {
+		
+		Scanner sc= new Scanner(System.in);
+		int scelta;
+		
+		
+		do {
+		System.out.println("Inserire il primo numero intero: ");
+		int num1= sc.nextInt();
+		
+		System.out.println("Inserire il secondo numero intero: ");
+		int num2= sc.nextInt();
+		
+		stampa(num1,num2);
+		
+		System.out.println("Se si vuole continuare digitare un numero diverso da zero.");
+		
+		scelta= sc.nextInt();
+		
+		}while(scelta!=0);
+		
+		System.out.println("Programma terminato");
+		
+		sc.close();
+	}
+	
+	static void stampa(int soglia, int incremento) {
+		
+		if(soglia<0 || incremento<0 || incremento>soglia) {
+			System.out.println("I valori passati non rispettano i criteri.");
+			System.out.println("Soglia e incremento devono essere positivi, con l'incremento minore della soglia.");
+		}else {
+		for(int i=0;i<soglia;i++) {
+			System.out.println(i);
+			i+=incremento;
+		}
+	}
+	}
+
+}

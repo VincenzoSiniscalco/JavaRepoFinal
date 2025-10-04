@@ -1,0 +1,32 @@
+package it.itconsulting.ClassObject.model;
+
+public class ContoCorrente {
+	private String numeroConto;
+	private float saldo;
+	private Banca banca;
+	
+	public ContoCorrente(String nc,float saldo,Banca banca) {
+		this.numeroConto=nc;
+		this.saldo=saldo;
+		this.banca=banca;
+	}
+	
+	public String descrizione() {
+		return numeroConto + " " + saldo + " " + banca.descrizione();
+	}
+	
+	public String getNomeBanca() {
+		if(banca.getNome()==null) {
+			System.out.println("La banca non ha nome.");
+		}
+		return banca.getNome();
+	}
+	
+	public void setNomeBanca(String nome) {
+		if(banca.getNome()==null) {
+			System.out.println("La banca non ha nome.");
+		}
+		return banca.setNome();
+	}
+	
+}

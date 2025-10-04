@@ -1,0 +1,10 @@
+package com.azienda.ereditarieta.ui;
+
+public class TestEreditarieta {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

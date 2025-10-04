@@ -1,0 +1,38 @@
+package it.itconsulting.ClassObject.model;
+
+public class Fabbrica {
+	private String nome;
+	private Indirizzo indirizzo;
+	private static int autoProdotte;
+	
+	public Fabbrica(String nome, Indirizzo indirizzo) {
+		this.nome=nome;
+		this.indirizzo=indirizzo;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public Indirizzo getIndirizzo() {
+		return indirizzo;
+	}
+
+	public void setIndirizzo(Indirizzo indirizzo) {
+		this.indirizzo = indirizzo;
+	}
+	public int getAutoProdotte() {
+		return autoProdotte;
+	}
+	public void produciAuto() {
+		autoProdotte++;
+	}
+	public String infoFabbrica() {
+		return "Fabbrica: "+ nome + " situata in " + indirizzo.infoIndirizzo() + ". Ha prodotto" + autoProdotte + " auto.";
+	}
+	
+}

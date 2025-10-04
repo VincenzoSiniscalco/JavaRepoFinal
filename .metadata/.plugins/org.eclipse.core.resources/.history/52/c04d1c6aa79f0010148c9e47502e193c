@@ -1,0 +1,46 @@
+package it.itconsulting.ClassObject.ui;
+
+import java.util.Scanner;
+
+import it.itconsulting.ClassObject.model.Libro;
+
+public class TestLibro {
+
+	public static void main(String[] args) {
+		
+		Scanner sc= new Scanner(System.in);
+		
+		int scelta = 0;
+		do {
+		System.out.println("Inserire i dettagli del libro (Titolo , autore , prezzo, numero pagine): ");
+		
+		Libro l= new Libro(sc);
+		l.stampaInfo();
+		
+		System.out.println("Immettere l'aumento di prezzo da applicare al libro "+ l.getTitolo());
+		
+		l.incrementaPrezzo(sc);
+		
+		l.stampaInfo();
+		
+		System.out.println("Se si vuole continuare ad usare il programma, digitare un numero diverso da zero.");
+		scelta= sc.nextInt();
+		}while(scelta!=0);
+		sc.close();
+	}
+	public static void Libro(Scanner sc) { //costruttore per parametri da console
+		System.out.println("Inserire le caratteristiche del libro(titolo, autore, prezzo, numero pagine): ");
+		if(sc!=null) {
+			Libro libro = new Libro(null, null, 0, 0);
+			libro.setTitolo(sc.nextLine());
+			libro.setAutore(sc.nextLine());
+			libro.setPrezzo(sc.nextFloat());
+			libro.setNumeroPagine(sc.nextInt());
+		
+		}else {
+			System.err.println("Errore di formato");
+		}
+	}
+	
+
+}

@@ -1,0 +1,5 @@
+package com.azienda.ereditarieta.model;
+
+public class Madre {
+
+}

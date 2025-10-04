@@ -1,0 +1,49 @@
+package com.amazon.sintassiBase.ui;
+
+import java.util.Scanner;
+
+public class Esempio5 {
+
+	public static void main(String[] args) {
+		
+		Scanner sc= new Scanner(System.in);
+		
+		System.out.println("Inserire il primo numero: ");
+		int x = sc.nextInt();
+		
+		System.out.println("Inserire il secondo numero: ");
+		int y = sc.nextInt();
+		
+		if(x<y) {
+			System.out.println("Inserire true o false ");
+			boolean b= sc.nextBoolean();
+			if(b) {
+				System.out.println("x minore di y e true ");
+			}else {
+				System.out.println("x minore di y e false ");
+			}
+		}else if(x==y) {
+			System.out.println("Inserire true o false ");
+			boolean b= sc.nextBoolean();
+			if(b) {
+			System.out.println("x uguale ad y e true ");
+			}else {
+			System.out.println("x uguale ad y e false ");
+			}
+			
+		}else {
+			System.out.println("Inserire true o false ");
+			boolean b= sc.nextBoolean();
+			if(b) {
+				System.out.println("x maggiore di y e true ");
+			}else {
+				System.out.println("x maggiore di y e false ");
+			}
+		}
+		System.out.println("Il programma è terminato.");
+		
+		
+		sc.close();
+	}
+
+}

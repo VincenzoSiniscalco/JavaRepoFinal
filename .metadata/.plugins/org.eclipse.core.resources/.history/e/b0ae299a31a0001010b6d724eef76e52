@@ -1,0 +1,15 @@
+package it.itconsulting.ClassObject.ui;
+
+import it.itconsulting.ClassObject.model.Bottiglia;
+import it.itconsulting.ClassObject.utilities.Constants;
+
+public class UsoBottiglia {
+	
+	public static void main(String[] args) {
+	
+		Bottiglia b= new Bottiglia(Constants.CONTENUTO_ACQUA, MATERIALE_PLASTICA, 2.0f, 0);
+	
+	
+	
+	}
+}

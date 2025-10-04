@@ -1,0 +1,19 @@
+package com.amazon.sintassiBase.ui;
+
+public class Esempio4 {
+
+	public static void main(String[] args) {
+		int x = 1;
+		int y = 2;
+		
+		if(x>y) {
+			System.out.println("X>Y");
+		}else if(x==y) {
+			System.out.println("X=Y");
+		}else {
+			System.out.println("X<Y");
+		}
+		System.out.println("Programma terminato.");
+	}
+
+}

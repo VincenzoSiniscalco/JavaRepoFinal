@@ -1,0 +1,83 @@
+package it.itconsulting.ClassObject.model;
+
+import java.util.Scanner;
+
+public class Libro {
+	private String titolo,autore;
+	private float prezzo;
+	private int numeroPagine;
+	
+	public Libro(String titolo, String autore, float prezzo, int np) { //normale costruttore parametrico
+		this.titolo=titolo;
+		this.autore=autore;
+		this.prezzo=prezzo;
+		numeroPagine=np;
+	}
+	public Libro(Scanner sc) { //costruttore per parametri da console
+		System.out.println("Inserire le caratteristiche del libro(titolo, autore, prezzo, numero pagine): ");
+		titolo=sc.nextLine();
+		autore=sc.nextLine();
+		prezzo=sc.nextFloat();
+		numeroPagine=sc.nextInt();
+	}
+
+	public String getTitolo() {
+		return titolo;
+	}
+
+	public void setTitolo(String titolo) {
+		this.titolo = titolo;
+	}
+
+	public String getAutore() {
+		return autore;
+	}
+
+	public void setAutore(String autore) {
+		this.autore = autore;
+	}
+
+	public float getPrezzo() {
+		return prezzo;
+	}
+
+	public void setPrezzo(float prezzo) {
+		this.prezzo = prezzo;
+	}
+
+	public int getNumeroPagine() {
+		return numeroPagine;
+	}
+
+	public void setNumeroPagine(int numeroPagine) {
+		this.numeroPagine = numeroPagine;
+	}
+	
+	public void incrementaPrezzo(Scanner sc) {
+		float incremento=sc.nextFloat();
+		if(incremento<=0) {
+			stampaErrore();
+		}else {
+			prezzo+=incremento;
+		}
+	}
+	public String stampaErrore() {
+		String err="Errore di formato!";
+		return err;
+	}
+	public String info() {
+		if(titolo!=null||autore!=null) {
+		return "Titolo: " + titolo + " di " + autore + ", costo " + prezzo + ", " + numeroPagine + " pagine.";
+		}else {
+			return stampaErrore();
+		}
+	}
+	public void stampaInfo() {
+		if(info()!=stampaErrore()) {
+		System.out.println(info());
+			}else {
+				System.err.println(stampaErrore());
+			}
+		}
+	
+}

@@ -1,0 +1,12 @@
+package it.itconsulting.ClassObject.ui;
+
+import it.itconsulting.ClassObject.model.Fabbrica;
+
+public class ChiamanteAutomobile {
+	public static void main(String[] args) {
+		
+		Fabbrica f=new Fabbrica("Ferrari","Italia","Modena","via Roma",1);
+		
+				
+	}
+}

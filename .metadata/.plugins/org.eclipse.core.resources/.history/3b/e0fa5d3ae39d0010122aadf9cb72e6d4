@@ -1,0 +1,18 @@
+package it.itconsulting.esercizi.ui;
+import java.util.Random;
+
+
+public class TestIndovina {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	
+	
+	
+	static int controlla() {
+		int valore = newRandom().nextInt(5);
+		return valore;
+	}
+}

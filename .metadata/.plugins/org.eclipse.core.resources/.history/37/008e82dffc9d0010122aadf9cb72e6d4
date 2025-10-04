@@ -1,0 +1,25 @@
+package com.google.prova.ui;
+
+public class Test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+			int numero = 11;
+//			stampaNumeri();
+			secondaStampa();
+	}
+//			public static void stampaNumeri()
+//			
+////			{
+////			int numero = 5;
+////			System.out.println("Numero= " + numero);
+////			}
+////			
+			public static void secondaStampa()
+			{
+			String numero;
+			System.out.println("Numero= " + numero);
+			}
+		}
+

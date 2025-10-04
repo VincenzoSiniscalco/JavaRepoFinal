@@ -1,0 +1,26 @@
+package com.azienda.classObject.ui;
+
+public class EsempioMetodi {
+
+	public static void main(String[] args) {
+		
+		int x=3;
+		metodo1(x);
+		System.out.println(x);
+		
+		Persona pers= new Persona("Mario","Rossi");
+		metodo2(pers);
+		System.out.println(pers.getNome() + " " + pers.getCognome());
+		
+	}
+	
+	public static void metodo1(int a) {
+		a= 20;
+		System.out.println(a);
+	}
+	public static void metodo2(Persona p) {
+		p.setNome("Laura");
+		p.setCognome("Verdi");
+	}
+
+}

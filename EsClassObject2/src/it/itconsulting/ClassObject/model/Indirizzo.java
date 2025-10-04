@@ -1,0 +1,41 @@
+package it.itconsulting.ClassObject.model;
+
+public class Indirizzo {
+	private String citta;
+	private String stradaPiazza;
+	private int numeroCivico;
+	
+	public Indirizzo(String citta, String via, int nc) {
+		this.citta=citta;
+		stradaPiazza=via;
+		numeroCivico=nc;
+		
+	}
+
+	public String getCitta() {
+		return citta;
+	}
+	public void setCitta(String citta) {
+		this.citta = citta;
+	}
+	public String getStradaPiazza() {
+		return stradaPiazza;
+	}
+	public void setStradaPiazza(String stradaPiazza) {
+		this.stradaPiazza = stradaPiazza;
+	}
+	public int getNumeroCivico() {
+		return numeroCivico;
+	}
+	public void setNumeroCivico(int numeroCivico) {
+		this.numeroCivico = numeroCivico;
+	}
+	
+	public String descrizione() {
+		if(citta==null||stradaPiazza==null||numeroCivico==0) {
+			return null;
+		}
+		return citta + ", " + stradaPiazza + " " + numeroCivico;
+	}
+	
+}

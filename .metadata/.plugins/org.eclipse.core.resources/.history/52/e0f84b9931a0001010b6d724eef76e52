@@ -1,0 +1,23 @@
+package it.itconsulting.ClassObject.utilities;
+
+public class Constants {
+	public final String CONTENUTO_AQCUA = "acqua";
+	public final String CONTENUTO_VINO = "vino";
+	public final String MATERIALE_VETRO = "vetro";
+	public final String MATERIALE_PLASTICA = "plastica";
+	
+	public String getCONTENUTO_AQCUA() {
+		return CONTENUTO_AQCUA;
+	}
+	public String getCONTENUTO_VINO() {
+		return CONTENUTO_VINO;
+	}
+	public String getMATERIALE_VETRO() {
+		return MATERIALE_VETRO;
+	}
+	public String getMATERIALE_PLASTICA() {
+		return MATERIALE_PLASTICA;
+	}
+
+	
+}

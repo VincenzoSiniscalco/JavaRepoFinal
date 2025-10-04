@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="com.sun.tools.jdeprscan.scan.Scan"/>
+    <fullyQualifiedTypeName name="java.lang.Math"/>
+    <fullyQualifiedTypeName name="java.util.Random"/>
+    <fullyQualifiedTypeName name="com.azienda.classObjext.model.Corso"/>
+    <fullyQualifiedTypeName name="com.azienda.classObject.model.Corso"/>
+    <fullyQualifiedTypeName name="com.azienda.classObject.model.Docente"/>
+    <fullyQualifiedTypeName name="com.azienda.classObject.model.Corso2"/>
+    <fullyQualifiedTypeName name="it.itconsulting.ClassObject.model.Tavolo"/>
+    <fullyQualifiedTypeName name="it.itconsulting.ClassObject.model.Indirizzo"/>
+    <fullyQualifiedTypeName name="it.itconsulting.ClassObject.model.Banca"/>
+    <fullyQualifiedTypeName name="it.itconsulting.ClassObject.model.ContoCorrente"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="com.azienda.classObject.model.EsempioStatic"/>
+    <fullyQualifiedTypeName name="it.itconsulting.ClassObject.model.ComponentePc"/>
+    <fullyQualifiedTypeName name="jdk.internal.misc.FileSystemOption"/>
+    <fullyQualifiedTypeName name="jdk.internal.org.jline.terminal.TerminalBuilder.SystemOutput"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="com.azienda.ereditarieta.model.Padre"/>
+    <fullyQualifiedTypeName name="com.azienda.ereditarieta.model.Figlio"/>
+    <fullyQualifiedTypeName name="com.azienda.ereditarieta.model.Figlia"/>
+    <fullyQualifiedTypeName name="com.azienda.qualificatori.model.Qualificatori"/>
+    <fullyQualifiedTypeName name="com.azienda.override.model.Child"/>
+</qualifiedTypeNameHistroy>

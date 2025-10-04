@@ -1,0 +1,7 @@
+package com.azienda.ereditarieta.model;
+
+public class Nonno {
+	public Nonno() {
+		System.out.println("Costruttore di nonno");
+	}
+}

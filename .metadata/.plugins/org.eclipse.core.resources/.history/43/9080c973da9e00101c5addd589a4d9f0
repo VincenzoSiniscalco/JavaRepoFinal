@@ -1,0 +1,7 @@
+package com.azienda.classObject.ui;
+
+public class TestStatic {
+ public static void main(String[] args) {
+	
+}
+}

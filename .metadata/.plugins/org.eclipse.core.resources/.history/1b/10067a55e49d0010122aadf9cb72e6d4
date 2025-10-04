@@ -1,0 +1,43 @@
+package it.itconsulting.esercizi.ui;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class TestIndovinaBase {
+
+	public static void main(String[] args) {
+		
+			Scanner sc= new Scanner(System.in);
+			int scelta;
+			do {
+			int numIndovina =controlla();
+			
+			System.out.println("Inserire un numero: ");
+			int num=sc.nextInt();
+			
+			
+			if(num==numIndovina) {
+				System.out.println("Hai indovinato!");
+			}else {
+				System.out.println("Hai sbagliato, il numero da indovinare era : " + numIndovina);
+			}
+			
+			System.out.println("Se vuoi continuare inserisci un numero diverso da zero.");
+			scelta=sc.nextInt();
+			
+			}while (scelta!=0);
+			System.out.println("Programma terminato.");
+			
+			
+			sc.close();
+		}
+		
+		
+		
+		static int controlla() {
+			
+			int valore= new Random().nextInt(5);
+			
+			return valore;
+		}
+	}

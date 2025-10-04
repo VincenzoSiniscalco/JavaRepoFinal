@@ -1,0 +1,15 @@
+package com.azienda.ereditarieta.ui;
+
+import com.azienda.ereditarieta.model.Figlia;
+
+public class TestEreditarieta2 {
+
+	public static void main(String[] args) {
+		
+		Figlia f=new Figlia("Anna","Claudia");
+		System.out.println("Nome madre: "+ f.getNomeMadre());
+		System.out.println("Nome figlia: "+f.getNomeFiglia());
+		System.out.println("Programma terminato.");
+	}
+
+}

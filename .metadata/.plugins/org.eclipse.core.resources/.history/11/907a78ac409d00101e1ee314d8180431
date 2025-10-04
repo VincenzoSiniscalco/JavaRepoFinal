@@ -1,0 +1,21 @@
+package com.amazon.sintassiBase.ui;
+
+public class Esempio8 {
+
+	public static void main(String[] args) {
+		
+		metodo1();
+		System.out.println("Programma terminato.");
+		metodo2("Carlo");
+		String nome= "Anna";
+		metodo2(nome);
+	}
+
+	static void metodo1() {
+		System.out.println("Metodo 1.");
+	}
+	static void metodo2(String a) {
+		System.out.println("Benvenuto "+a);
+	}
+	
+}

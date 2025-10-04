@@ -1,0 +1,26 @@
+package it.itconsulting.ClassObject.ui;
+
+import java.util.Scanner;
+
+import it.itconsulting.ClassObject.model.Bambino;
+
+public class ChiamanteBambino {
+
+	public static void main(String[] args) {
+		
+		Scanner sc= new Scanner(System.in);
+		
+		Bambino b= new Bambino("Mario", "Rossi", 110.5f);
+		
+		System.out.println("Inserire un incremento");
+		
+		b.cresce(sc);
+		System.out.println(b.infoBambino());
+		
+		Bambino b2= new Bambino("Gianni", "Verdi", 98.2f);
+		b2.cresce(sc);
+		System.out.println(b2.infoBambino());
+		
+	}
+
+}

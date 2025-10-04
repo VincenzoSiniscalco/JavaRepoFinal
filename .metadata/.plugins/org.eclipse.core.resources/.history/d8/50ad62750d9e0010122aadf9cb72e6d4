@@ -1,0 +1,5 @@
+package com.azienda.classObjext.model;
+
+public class Corso {
+
+}

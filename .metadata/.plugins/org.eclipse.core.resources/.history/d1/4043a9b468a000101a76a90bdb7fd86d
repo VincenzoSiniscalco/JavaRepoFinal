@@ -1,0 +1,10 @@
+package com.azienda.ereditarieta.model;
+
+public class Figlia extends Madre {
+	private String nomeFiglia;
+	
+	public Figlia(String nomeMadre,String nomeFiglia) {
+		super(nomeMadre);
+		this.nomeFiglia=nomeFiglia;
+	}
+}

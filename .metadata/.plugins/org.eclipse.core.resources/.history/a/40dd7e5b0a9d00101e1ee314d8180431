@@ -1,0 +1,25 @@
+package com.amazon.sintassiBase.ui;
+
+public class Esempio6 {
+
+	public static void main(String[] args) {
+		
+		int x=2;
+		int y=3;
+		
+		switch(x-y) {
+		case 0:{
+			System.out.println("Zero.");
+			break;
+		}case -1:{
+			System.out.println("Meno uno.");
+			break;
+		}default:{
+			System.out.println("Nè zero nè meno uno.");
+		}
+		}
+
+		System.out.println("Il programma è terminato.");
+	}
+
+}

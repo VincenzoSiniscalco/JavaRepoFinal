@@ -1,0 +1,32 @@
+package com.azienda.classObject.model;
+
+public class Corso {
+
+	private String docente= "Pippo";
+	private String materia;
+	private String aula;
+	private int crediti;
+
+	{
+		docente= "Pluto";
+	}
+	
+	public Corso() {
+		docente= "Paperino";
+		materia= "Java";
+		aula="Aula 2";
+		crediti=10;
+	}
+	public Corso(String doc,String materia,String au,int crediti) {
+		docente=doc;
+		this.materia=materia;
+		aula=au;
+		this.crediti=crediti;
+	}
+	public Corso(String doc,String materia) {
+//		docente=doc;
+//		this.materia=materia;
+		this(doc,materia,null,0);
+	}
+	
+}

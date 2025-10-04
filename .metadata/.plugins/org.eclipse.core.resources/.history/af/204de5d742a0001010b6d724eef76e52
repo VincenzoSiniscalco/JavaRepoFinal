@@ -1,0 +1,102 @@
+package it.itconsulting.ClassObject.ui;
+
+import java.util.Scanner;
+import it.itconsulting.ClassObject.model.Bottiglia;
+import it.itconsulting.ClassObject.utilities.Constants;
+
+public class UsoBottiglia {
+
+	public static void main(String[] args) {
+
+		Scanner sc= new Scanner(System.in);
+		Bottiglia b= new Bottiglia(Constants.CONTENUTO_ACQUA, Constants.MATERIALE_PLASTICA, 2.0f, 0);
+		System.out.println("Inserire la quantità da aggiungere alla bottiglia di "+b.getMateriale() + " che contiene "+ b.getContenuto());
+
+		b.aggiungi(sc);
+
+
+		System.out.println("Inserire la quantità da aggiungere alla bottiglia di "+b.getMateriale() + " che contiene "+ b.getContenuto());
+
+		b.aggiungi(sc);
+
+
+		String res=b.stampaBottiglia();
+		System.out.println(res);
+
+		Bottiglia b2= new Bottiglia(Constants.CONTENUTO_VINO, Constants.MATERIALE_VETRO, 1.33f, 0);
+
+		System.out.println("Inserire la quantità da aggiungere alla bottiglia di "+b2.getMateriale()+" che contiene " +b2.getContenuto());
+		b2.aggiungi(sc);
+
+
+
+		System.out.println("Inserire la quantità da aggiungere alla bottiglia di "+b2.getMateriale()+" che contiene " +b2.getContenuto());
+		b2.aggiungi(sc);
+
+		res=b2.stampaBottiglia();
+		System.out.println(res);
+
+		Bottiglia b3= creaBottiglia(sc);
+		b3.stampaBottiglia();
+		testAggiunta(b3,sc);
+		
+		System.out.println("Inserire la quantità da aggiungere alla bottiglia di "+b3.getMateriale()+" che contiene " +b3.getContenuto());
+		
+		b3.aggiungi(sc);
+		res=b3.stampaBottiglia();
+		System.out.println(res);
+
+
+		sc.close();
+	}
+	private static Bottiglia creaBottiglia(Scanner sc) {
+		if(sc!=null) {
+			System.out.println("La bottiglia contiene acqua o vino? (acqua/vino)");
+			String contenuto= sc.nextLine().toLowerCase().trim();
+			if(contenuto.equals("acqua")) {
+				contenuto = Constants.CONTENUTO_ACQUA;
+			}else if(contenuto.equals("vino")){
+				contenuto= Constants.CONTENUTO_VINO;
+			}else {
+				System.err.println("Bibita non corretta!");
+			}
+			System.out.println("La bottiglia è di plastica o vetro? (plastica/vetro)");
+			String materiale= sc.nextLine().toLowerCase().trim();
+			if(materiale.equals("plastica")) {
+				materiale = Constants.MATERIALE_PLASTICA;
+			}else if(materiale.equals("vetro")){
+				materiale= Constants.MATERIALE_VETRO;
+			}else {
+				System.err.println("Materiale non corretto!");
+			}
+
+			System.out.println("Definire la capacità della bottiglia: ");
+			float maxCapacita= sc.nextFloat();
+			sc.nextLine();
+
+			System.out.println("Specificare quanto liquido è presente nella bottiglia: ");
+			float actQt=sc.nextFloat();
+			sc.nextLine();
+			return new Bottiglia(contenuto,materiale,maxCapacita,actQt);
+
+		}else {
+			return null;
+		}
+
+
+	}
+	private static void testAggiunta(Bottiglia b, Scanner sc) {
+		if(b!=null && sc.nextFloat()>0) {
+			System.out.println("Quanto vorresti mettere nella bottiglia?");
+			float incremento=sc.nextFloat();
+			if(!b.aggiungi(sc)) {
+				System.err.println( incremento + " non entra nella bottiglia");
+			}else{
+				System.out.println(incremento +" entra nella bottiglia");
+			}
+
+			}else{
+				System.err.println("Input non validi");
+		}
+	}
+}

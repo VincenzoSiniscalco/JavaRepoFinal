@@ -1,0 +1,16 @@
+package com.google.prova.ui;
+
+public class Test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Ciao");
+	
+		
+		String s = "Ciao";
+		int i = 0;
+		String s2 = s + " " + i + 1;	
+		System.out.println(s2);
+	}
+
+}
