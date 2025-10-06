@@ -31,10 +31,10 @@ public class ChiamanteImpiegato {
 //		System.out.println(ref.getMatricola());
 		
 		Persona obj = creaPersona(sc);
-		stampaInfo(obj);
+		System.out.println(obj);
 		
 		Persona obj2 =creaPersona(sc);
-		stampaInfo(obj2);
+		System.out.println(obj2);
 		
 		if(obj.equals(obj2)) {
 			System.out.println("Gli oggetti hanno gli stessi attributi.");
@@ -43,13 +43,13 @@ public class ChiamanteImpiegato {
 		}
 		
 		obj= creaImpiegato(sc,obj);
-		stampaInfo(obj);
+		System.out.println(obj);;
 		
 		Impiegato ref=(Impiegato) obj;
 		System.out.println("Specifica il cambio matricola: ");
 		ref.setMatricola(sc.nextLine());
 		
-		stampaInfo(ref);
+		System.out.println(ref);;
 		
 		sc.close();
 	}
@@ -71,14 +71,14 @@ public class ChiamanteImpiegato {
 			}return null;
 	}
 
-	private static void stampaInfo(Persona p) {
-		
-		if(p instanceof Impiegato) {
-			Impiegato ref= (Impiegato) p;
-			System.out.println(ref.toString()); 
-		}
-		else{
-			System.out.println(p.toString()); 
-		}
-	}
+//	private static void stampaInfo(Persona p) {	//SUPERFLUO
+//										
+//		if(p instanceof Impiegato) {
+//			Impiegato ref= (Impiegato) p;
+//			System.out.println(ref.toString()); 
+//		}
+//		else{
+//			System.out.println(p.toString()); 
+//		}
+//	}
 }
