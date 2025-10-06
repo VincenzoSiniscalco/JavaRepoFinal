@@ -9,36 +9,25 @@ public class Bambino extends Persona{
 		super(nome,cognome,altezza);
 		contatoreBambini++;
 	}
-	public String getNome() {
-		return super.getNome();
-	}
-	public void setNome(String nome) {
-		super.setNome(nome);
-	}
-	public String getCognome() {
-		return super.getCognome();
-	}
-	public void setCognome(String cognome) {
-		super.setCognome(cognome);
-	}
-	public float getAltezza() {
-		return super.getAltezza();
-	}
-	public void setAltezza(float altezza) {
-		super.setAltezza(altezza);
-	}
-	public static int getContatoreBambini() {
-		return contatoreBambini;
-	}
+	
 	@Override
-	public String stampaDescrizione() {
+	public String toString() {
 		if(super.getNome().equals(null)&&super.getCognome().equals(null)&&super.getAltezza()==0f) {
 			return null;
 		}
-		return "Bambino :" +getNome() +" "+ getCognome() + " " + "è alto " +getAltezza()+ " cm \n";
-	}
+		return "Bambino :" + super.toString();
+		}
 	
 	public void cresce(float f) {
-		super.cresce(f);
+		if(f<0) {
+			System.err.println("L'incremento dev'essere positivo!");
+		}else {
+			setAltezza(f+getAltezza());
+		}
+	}
+
+	public static int getContatoreBambini() {
+	
+		return contatoreBambini;
 	}
 }

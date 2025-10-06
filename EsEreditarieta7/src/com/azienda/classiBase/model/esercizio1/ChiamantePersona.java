@@ -7,10 +7,11 @@ public class ChiamantePersona {
 
 		for(int i=0;i<20;i++) {
 			Persona p_i= new Persona("Nome_"+i, "Cognome_"+i, 100.0f);
-			System.out.println(p_i.stampaDescrizione()); 
+			System.out.println(p_i); 
 			i++;
 			Bambino b_i= new Bambino("Nome_"+i, "Cognome_"+i, 100.0f);
-			System.out.println(b_i.stampaDescrizione()); 		}
+			b_i.cresce(10.0f);
+			System.out.println(b_i); 		}
 		
 		System.out.println("Sono stati creati "+Bambino.getContatoreBambini()+ " bambini.");
 		System.out.println("In totale sono state create "+Bambino.getContatorePersone()+ " persone.");

@@ -41,8 +41,8 @@ public class Persona {
 	public static int getContatorePersone() {
 		return contatorePersone;
 	}
-
-	public String stampaDescrizione() {
+	@Override
+	public String toString() {
 		if(getNome().equals(null)&&getCognome().equals(null)&&getAltezza()==0f) {
 			return null;
 		}
