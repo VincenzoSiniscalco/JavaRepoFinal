@@ -71,10 +71,10 @@ public class ChiamanteImpiegato {
 			}return null;
 	}
 
-//	private static void stampaInfo(Persona p) {	//SUPERFLUO
-//										
-//		if(p instanceof Impiegato) {
-//			Impiegato ref= (Impiegato) p;
+//	private static void stampaInfo(Persona p) {	//SUPERFLUO per override di toString 
+//												// nelle classi padre e figlia
+//		if(p instanceof Impiegato) {			// il programma capisce già
+//			Impiegato ref= (Impiegato) p;		//quale metodo chiamare dei due
 //			System.out.println(ref.toString()); 
 //		}
 //		else{
