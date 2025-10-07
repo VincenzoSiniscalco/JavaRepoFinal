@@ -22,4 +22,11 @@
     <fullyQualifiedTypeName name="com.azienda.ereditarieta.model.Figlia"/>
     <fullyQualifiedTypeName name="com.azienda.qualificatori.model.Qualificatori"/>
     <fullyQualifiedTypeName name="com.azienda.override.model.Child"/>
+    <fullyQualifiedTypeName name="java.lang.Override"/>
+    <fullyQualifiedTypeName name="com.azienda.ereditarieta.model.OverrideToString"/>
+    <fullyQualifiedTypeName name="com.azienda.ereditarieta.ui.TestOverrideEquals"/>
+    <fullyQualifiedTypeName name="com.azienda.ereditarieta.model.Persona"/>
+    <fullyQualifiedTypeName name="com.azienda.ereditarieta.model.Macchina"/>
+    <fullyQualifiedTypeName name="com.amazon.ereditarieta.model.Parent"/>
+    <fullyQualifiedTypeName name="java.lang.Object"/>
 </qualifiedTypeNameHistroy>

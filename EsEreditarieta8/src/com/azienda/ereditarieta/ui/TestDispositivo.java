@@ -10,16 +10,16 @@ public class TestDispositivo {
 
 	public static void main(String[] args) {
 		Scanner sc= new Scanner(System.in);
-		Cellulare c1= new Cellulare("Samsung", "Galaxy s22", 980.50f, 50);
-		Televisore t1= new Televisore("LG", "OLED evo", 589.99f, 70, 5);
+		DispositivoMultimediale c1= new Cellulare("Samsung", "Galaxy s22", 980.50f, 50);
+		DispositivoMultimediale t1= new Televisore("LG", "OLED evo", 589.99f, 70, 5);
 		
-		stampaInfo(c1,null);
-		stampaInfo(t1,sc);
+		usa(c1,null);
+		usa(t1,sc);
 		
 		sc.close();
 	}
 
-	public static void stampaInfo(DispositivoMultimediale m, Scanner sc) {
+	public static void usa(DispositivoMultimediale m, Scanner sc) {
 		if(m instanceof Cellulare) {
 			Cellulare ref= (Cellulare) m;
 			ref.chiama();
