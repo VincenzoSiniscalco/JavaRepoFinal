@@ -33,28 +33,20 @@ public class ChiamanteOperazioni {
 		sc.nextLine();
 		OperazioniAritmetiche object= null;
 		switch(scelta) {
-		case 1:{
+		case 1:
 			object= new Somma();
-			
 			break;
-		}
-		case 2:{
+		case 2:
 			object= new Differenza();
-			
 			break;
-		}
-		case 3:{
+		case 3:
 			object= new Prodotto();
-			
 			break;
-		}
-		case 4:{
+		case 4:
 			object= new Divisione();
-			
 			break;
 		}
 		
-		}
 		int res=object.operate(op1,op2);
 		object.printResult(res);
 		
