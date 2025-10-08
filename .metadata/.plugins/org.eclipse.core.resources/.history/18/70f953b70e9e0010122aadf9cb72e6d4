@@ -1,8 +1,0 @@
-package com.azienda.classObject.model;
-
-public class Corso {
-	private String nome;
-	private String docente;
-	private String aula;
-
-}
