@@ -1,6 +1,0 @@
-package com.azienda.classObject.model;
-
-public class EsempioStatic {
-	public static String nomeStatico;
-	public String nome;
-}

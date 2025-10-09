@@ -1,9 +1,0 @@
-package com.azienda.classObject.ui;
-
-import com.azienda.classObject.model.EsempioStatic;
-
-public class TestStatic {
-	public static void main(String[] args) {
-		System.out.println(EsempioStatic.nomeStatico);
-	}
-}

@@ -32,8 +32,19 @@
     <fullyQualifiedTypeName name="com.azienda.interfacceAstratte.model.MySqlDbConnection"/>
     <fullyQualifiedTypeName name="com.azienda.interfacceAstratte.model.OracleDbConnection"/>
     <fullyQualifiedTypeName name="com.azienda.interfacceAstratte.model.DbConnection"/>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="java.awt.desktop.OpenFilesHandler"/>
     <fullyQualifiedTypeName name="com.azienda.interfacceastratte.model.ListaAstratta"/>
     <fullyQualifiedTypeName name="com.azienda.esinterfacceastratte.model.OperazioniAritmetiche"/>
+    <fullyQualifiedTypeName name="com.azienda.exception2.model.Divisione"/>
+    <fullyQualifiedTypeName name="java.lang.ArithmeticException"/>
+    <fullyQualifiedTypeName name="java.lang.NullPointerException"/>
+    <fullyQualifiedTypeName name="com.azienda.exception3.utils.StringValidator"/>
+    <fullyQualifiedTypeName name="com.azienda.exception3.exception.StringaTroppoCortaException"/>
+    <fullyQualifiedTypeName name="com.azienda.eccezioni.utilities.NumberValidator"/>
+    <fullyQualifiedTypeName name="java.util.InputMismatchException"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="com.azienda.eccezioni.exception.NegativeNumberException"/>
+    <fullyQualifiedTypeName name="java.lang.NegativeArraySizeException"/>
+    <fullyQualifiedTypeName name="com.azienda.eccezioni.exception.NumberIsZeroException"/>
+    <fullyQualifiedTypeName name="com.azienda.eccezioni.utilities.Controller"/>
 </qualifiedTypeNameHistroy>

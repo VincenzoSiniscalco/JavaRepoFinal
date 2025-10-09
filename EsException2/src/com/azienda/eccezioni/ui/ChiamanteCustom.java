@@ -56,6 +56,7 @@ public class ChiamanteCustom {
 		}while(scelta!=2);
 		sc.close();
 	}
+	
 	private static int leggiNumero(Scanner sc) {
 		while(true) {
 			try {

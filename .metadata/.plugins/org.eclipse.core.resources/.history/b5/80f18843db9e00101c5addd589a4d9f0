@@ -1,7 +1,0 @@
-package com.azienda.classObject.model;
-
-public class EsempioStatic {
-	
-	public static String nomeStatico; //attributo valido per tutti gli oggetti della classe
-	public String nome;
-}
