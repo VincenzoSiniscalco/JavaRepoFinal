@@ -1,6 +1,7 @@
 package com.azienda.utilityjdk.ui;
 
-import java.util.InputMismatchException;
+
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 import com.azienda.utilityjdk.exceptions.StringLenghtException;
@@ -42,7 +43,7 @@ public class TestUtility {
 			s=sc.nextLine();
 			try {
 				return s;
-			} catch (InputMismatchException e) {
+			} catch (NoSuchElementException e) {
 				System.out.println("Errore di formato! "+s+"Non è una stringa.");
 			}
 		}
