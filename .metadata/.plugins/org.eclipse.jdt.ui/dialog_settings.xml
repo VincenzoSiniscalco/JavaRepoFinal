@@ -24,8 +24,8 @@
 		<item key="create_package_info_java" value="false"/>
 	</section>
 	<section name="NewClassCreationWizard.dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="393"/>
-		<item key="DIALOG_Y_ORIGIN" value="323"/>
+		<item key="DIALOG_X_ORIGIN" value="396"/>
+		<item key="DIALOG_Y_ORIGIN" value="463"/>
 		<item key="DIALOG_WIDTH" value="574"/>
 		<item key="DIALOG_HEIGHT" value="660"/>
 		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
@@ -38,6 +38,8 @@
 		<item key="create_unimplemented" value="true"/>
 	</section>
 	<section name="completion_proposal_size">
+		<item key="size.x" value="428"/>
+		<item key="size.y" value="253"/>
 	</section>
 	<section name="quick_assist_proposal_size">
 	</section>
@@ -123,8 +125,8 @@
 		</section>
 	</section>
 	<section name="NewInterfaceCreationWizard.dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="358"/>
-		<item key="DIALOG_Y_ORIGIN" value="337"/>
+		<item key="DIALOG_X_ORIGIN" value="1166"/>
+		<item key="DIALOG_Y_ORIGIN" value="394"/>
 		<item key="DIALOG_WIDTH" value="579"/>
 		<item key="DIALOG_HEIGHT" value="543"/>
 		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
@@ -144,6 +146,13 @@
 		<item key="DIALOG_Y_ORIGIN" value="281"/>
 		<item key="DIALOG_WIDTH" value="517"/>
 		<item key="DIALOG_HEIGHT" value="627"/>
+		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+	</section>
+	<section name="NewEnumCreationWizard.dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="376"/>
+		<item key="DIALOG_Y_ORIGIN" value="355"/>
+		<item key="DIALOG_WIDTH" value="542"/>
+		<item key="DIALOG_HEIGHT" value="517"/>
 		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
 	</section>
 </section>

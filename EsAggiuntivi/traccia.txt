@@ -1,0 +1,49 @@
+Descrizione
+Sviluppare un programma che consenta di simulare il tempo medio di percorrenza di un veicolo, di tipo aereo o treno, in base alle informazioni richieste all’utente. 
+Creare una struttura di package che consenta di separare le classi di modello, logica applicativa, utilità, eccezioni custom ed esecuzione del programma.
+ 
+Modello di base
+Creare una classe Veicolo con attributi modello di tipo String e velocità di tipo Float.
+Creare una classe Aereo che eredita da Veicolo e che possiede gli attributi modello, velocità e un attributo diLinea di tipo Boolean. 
+Deve avere anche un metodo vola che effettui una stampa a console di un messaggio a piacere.
+Creare una classe Treno che eredita da Veicolo e che possiede gli attributi modello, velocità e un attributo regionale di tipo Boolean.
+ Deve avere anche un metodo percorreBinari che effettui una stampa a console di un messaggio a piacere.
+ 
+Business logic
+Creare un’interfaccia CalcolaTempi con due metodi astratti: calcolaTempiPercorrenza che riceve un Veicolo e una distanza di tipo Float, 
+e informazioniMovimento che riceve un Veicolo.
+Creare la classe CalcoloTempiAereo che implementa l’interfaccia CalcolaTempi. Il metodo calcolaTempiPercorrenza deve calcolare il tempo come distanza diviso velocità. 
+Il metodo informazioniMovimento deve invocare vola se riceve in input un Aereo, altrimenti deve stampare un messaggio di errore.
+Creare la classe CalcoloTempiTreno che implementa l’interfaccia CalcolaTempi. Anche qui il metodo calcolaTempiPercorrenza deve calcolare 
+il tempo come distanza diviso velocità. Il metodo informazioniMovimento deve invocare percorreBinari se riceve in input un Treno, 
+altrimenti deve stampare un messaggio di errore.
+Evitare di duplicare il metodo calcolaTempiPercorrenza.
+ 
+Eccezioni custom e classe Validatore
+Creare una classe VeicoloNonValidoException che rappresenti un’eccezione di tipo checked.
+Creare una classe Validatore che contenga un metodo che controlli una stringa sollevando VeicoloNonValidoException se la stringa è diversa da “aereo” e “treno”.
+ 
+Utility di controllo dell’input
+Creare una classe di utilità che effettui i seguenti controlli: primo controllo, che il valore digitato dall’utente sia un boolean.
+ L’utente deve rimanere bloccato in un ciclo finché non digita true o false. Questo controllo serve per sapere se l’aereo è di linea o se il treno è regionale. 
+ Secondo controllo, che il valore digitato sia un float. Anche in questo caso l’utente deve restare nel ciclo finché non inserisce un numero. 
+ Questo serve per la velocità media e la distanza.
+ 
+Classe VeicoloFactory
+Creare una classe VeicoloFactory con un metodo che crei un Veicolo a partire da una stringa che rappresenta il tipo di veicolo. 
+Prima verificare tramite il Validatore che il tipo ricevuto sia ammesso. Se il controllo va a buon fine, richiedere all’utente le altre informazioni del veicolo: 
+modello, velocità media, e se è un aereo chiedere se è di linea, se è un treno chiedere se è regionale. Utilizzare le utility per verificare i valori booleani e float.
+ 
+Classe di avvio del programma
+Il programma deve rimanere in esecuzione finché l’utente non digita ESC. Deve chiedere all’utente il tipo di veicolo che vuole utilizzare. 
+Deve creare il Veicolo tramite VeicoloFactory, gestendo l’eventuale eccezione VeicoloNonValidoException senza terminare il programma. 
+Se riesce a creare il Veicolo, deve chiedere all’utente la distanza da percorrere. Infine deve stampare a console le informazioni 
+del tempo di percorrenza e le informazioni di movimento del veicolo, sfruttando i metodi dell’interfaccia CalcolaTempi e istanziando 
+la classe concreta corretta in funzione del tipo di veicolo scelto.
+ 
+Test
+Bisogna testare le seguenti situazioni. Se l’utente digita una stringa che non corrisponde alle due tipologie di veicolo, 
+il programma deve dare un messaggio di errore ma non deve terminare. Se l’utente, quando deve digitare true o false, inserisce altri valori,
+ il programma deve dare un messaggio di errore ma non deve terminare. Se l’utente inserisce valori non numerici per la velocità o per la distanza, 
+ il programma deve dare un messaggio di errore ma non deve terminare. Il programma deve terminare solo se l’utente digita ESC. 
+ Nei casi validi, testare vari tipi di veicoli, velocità e distanze diverse.

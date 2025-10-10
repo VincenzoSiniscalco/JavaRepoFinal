@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="com.sun.tools.jdeprscan.scan.Scan"/>
-    <fullyQualifiedTypeName name="java.lang.Math"/>
-    <fullyQualifiedTypeName name="java.util.Random"/>
     <fullyQualifiedTypeName name="com.azienda.classObjext.model.Corso"/>
     <fullyQualifiedTypeName name="com.azienda.classObject.model.Corso"/>
     <fullyQualifiedTypeName name="com.azienda.classObject.model.Docente"/>
@@ -42,9 +39,25 @@
     <fullyQualifiedTypeName name="com.azienda.exception3.exception.StringaTroppoCortaException"/>
     <fullyQualifiedTypeName name="com.azienda.eccezioni.utilities.NumberValidator"/>
     <fullyQualifiedTypeName name="java.util.InputMismatchException"/>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="com.azienda.eccezioni.exception.NegativeNumberException"/>
     <fullyQualifiedTypeName name="java.lang.NegativeArraySizeException"/>
     <fullyQualifiedTypeName name="com.azienda.eccezioni.exception.NumberIsZeroException"/>
     <fullyQualifiedTypeName name="com.azienda.eccezioni.utilities.Controller"/>
+    <fullyQualifiedTypeName name="com.azienda.utilityjdk.exceptions.StringLenghtException"/>
+    <fullyQualifiedTypeName name="com.azienda.utilityjdk.utils.StringValidator"/>
+    <fullyQualifiedTypeName name="java.time.LocalTime"/>
+    <fullyQualifiedTypeName name="java.time.format.DateTimeFormatter"/>
+    <fullyQualifiedTypeName name="java.time.LocalDateTime"/>
+    <fullyQualifiedTypeName name="com.azienda.utilityjdk.esempio4.model.Abito"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.time.LocalDate"/>
+    <fullyQualifiedTypeName name="com.azienda.utilityjdk.utilities.NumberValidator"/>
+    <fullyQualifiedTypeName name="com.azienda.utilityjdk.exception.VoidStringException"/>
+    <fullyQualifiedTypeName name="com.azienda.utilityjdk.utilities.StringValidator"/>
+    <fullyQualifiedTypeName name="com.azienda.utilityjdk.model.StatoCivile"/>
+    <fullyQualifiedTypeName name="com.azienda.utilityjdk.utilities.EnumValidator"/>
+    <fullyQualifiedTypeName name="com.azienda.utilityjdk.exception.InvalidEnumException"/>
+    <fullyQualifiedTypeName name="com.azienda.utilityjdk.exception.NegativeNumberException"/>
+    <fullyQualifiedTypeName name="com.azienda.utilityjdk.utilities.DateValidator"/>
+    <fullyQualifiedTypeName name="com.azienda.utilityjdk.model.FormatoData"/>
 </qualifiedTypeNameHistroy>

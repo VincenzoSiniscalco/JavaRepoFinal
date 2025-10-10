@@ -18,5 +18,5 @@ public abstract class AbstractBanca implements Banca{
 	public double saldoEffettivo(int tipoConto) {
 		return saldo * getTassoInteresse(tipoConto);
 	}
-
+	
 }
