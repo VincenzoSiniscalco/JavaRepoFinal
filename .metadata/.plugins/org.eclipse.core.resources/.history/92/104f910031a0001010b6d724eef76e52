@@ -1,9 +1,0 @@
-package it.itconsulting.ClassObject.utilities;
-
-public class Constants {
-	private final String CONTENUTO_AQCUA = "acqua";
-	private final String CONTENUTO_VINO = "vino";
-	private final String MATERIALE_VETRO = "vetro";
-	private final String MATERIALE_PLASTICA = "plastica";
-
-}

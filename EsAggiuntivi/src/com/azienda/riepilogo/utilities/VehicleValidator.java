@@ -2,8 +2,6 @@ package com.azienda.riepilogo.utilities;
 
 import com.azienda.riepilogo.exception.VeicoloNonValidoException;
 
-
-
 public class VehicleValidator {
 	public static final String AEREO = "Aereo";
 	public static final String TRENO = "Treno";

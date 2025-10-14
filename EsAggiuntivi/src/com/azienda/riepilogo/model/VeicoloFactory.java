@@ -15,9 +15,6 @@ import com.azienda.riepilogo.utilities.VehicleValidator;
 
 public class VeicoloFactory {
 
-	
-
-
 	public Veicolo creaVeicolo(String s, Scanner sc)
 			throws VeicoloNonValidoException, IsFloatException, IsBooleanException, StringIsNullException {
 
@@ -40,9 +37,5 @@ public class VeicoloFactory {
             return new Treno(modello, velocita, regionale);
         }
     }
-
-	
-
-	
 
 }

@@ -1,20 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="com.azienda.classObjext.model.Corso"/>
-    <fullyQualifiedTypeName name="com.azienda.classObject.model.Corso"/>
-    <fullyQualifiedTypeName name="com.azienda.classObject.model.Docente"/>
-    <fullyQualifiedTypeName name="com.azienda.classObject.model.Corso2"/>
-    <fullyQualifiedTypeName name="it.itconsulting.ClassObject.model.Tavolo"/>
-    <fullyQualifiedTypeName name="it.itconsulting.ClassObject.model.Indirizzo"/>
-    <fullyQualifiedTypeName name="it.itconsulting.ClassObject.model.Banca"/>
-    <fullyQualifiedTypeName name="it.itconsulting.ClassObject.model.ContoCorrente"/>
-    <fullyQualifiedTypeName name="com.azienda.classObject.model.EsempioStatic"/>
-    <fullyQualifiedTypeName name="it.itconsulting.ClassObject.model.ComponentePc"/>
-    <fullyQualifiedTypeName name="jdk.internal.misc.FileSystemOption"/>
-    <fullyQualifiedTypeName name="jdk.internal.org.jline.terminal.TerminalBuilder.SystemOutput"/>
-    <fullyQualifiedTypeName name="java.lang.System"/>
-    <fullyQualifiedTypeName name="com.azienda.ereditarieta.model.Padre"/>
-    <fullyQualifiedTypeName name="com.azienda.ereditarieta.model.Figlio"/>
     <fullyQualifiedTypeName name="com.azienda.ereditarieta.model.Figlia"/>
     <fullyQualifiedTypeName name="com.azienda.qualificatori.model.Qualificatori"/>
     <fullyQualifiedTypeName name="com.azienda.override.model.Child"/>
@@ -49,7 +34,6 @@
     <fullyQualifiedTypeName name="java.time.format.DateTimeFormatter"/>
     <fullyQualifiedTypeName name="java.time.LocalDateTime"/>
     <fullyQualifiedTypeName name="com.azienda.utilityjdk.esempio4.model.Abito"/>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="java.time.LocalDate"/>
     <fullyQualifiedTypeName name="com.azienda.utilityjdk.utilities.NumberValidator"/>
     <fullyQualifiedTypeName name="com.azienda.utilityjdk.exception.VoidStringException"/>
@@ -60,4 +44,20 @@
     <fullyQualifiedTypeName name="com.azienda.utilityjdk.exception.NegativeNumberException"/>
     <fullyQualifiedTypeName name="com.azienda.utilityjdk.utilities.DateValidator"/>
     <fullyQualifiedTypeName name="com.azienda.utilityjdk.model.FormatoData"/>
+    <fullyQualifiedTypeName name="com.azienda.riepilogo.utilities.VehicleValidator"/>
+    <fullyQualifiedTypeName name="com.azienda.riepilogo.model.Veicolo"/>
+    <fullyQualifiedTypeName name="com.azienda.riepilogo.utilities.BooleanValidator"/>
+    <fullyQualifiedTypeName name="com.azienda.riepilogo.exception.VehicleNotAirplaneException"/>
+    <fullyQualifiedTypeName name="com.azienda.riepilogo.utilities.StringValidator"/>
+    <fullyQualifiedTypeName name="com.azienda.collection.model.Persona"/>
+    <fullyQualifiedTypeName name="com.azienda.collection.model.Corso"/>
+    <fullyQualifiedTypeName name="java.lang.Math"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="com.azienda.collection.model.Animale"/>
+    <fullyQualifiedTypeName name="com.azienda.collection.model.Zoo"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="com.azienda.collections.ui.EsercizioList"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.util.Iterator"/>
 </qualifiedTypeNameHistroy>
