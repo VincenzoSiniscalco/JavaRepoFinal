@@ -1,16 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="com.azienda.ereditarieta.model.Figlia"/>
-    <fullyQualifiedTypeName name="com.azienda.qualificatori.model.Qualificatori"/>
-    <fullyQualifiedTypeName name="com.azienda.override.model.Child"/>
-    <fullyQualifiedTypeName name="java.lang.Override"/>
-    <fullyQualifiedTypeName name="com.azienda.ereditarieta.model.OverrideToString"/>
-    <fullyQualifiedTypeName name="com.azienda.ereditarieta.ui.TestOverrideEquals"/>
-    <fullyQualifiedTypeName name="com.azienda.ereditarieta.model.Persona"/>
-    <fullyQualifiedTypeName name="com.azienda.ereditarieta.model.Macchina"/>
-    <fullyQualifiedTypeName name="com.amazon.ereditarieta.model.Parent"/>
-    <fullyQualifiedTypeName name="java.lang.Object"/>
-    <fullyQualifiedTypeName name="com.azienda.interfacceAstratte.ui.TestDbConnection"/>
     <fullyQualifiedTypeName name="com.azienda.interfacceAstratte.model.MySqlDbConnection"/>
     <fullyQualifiedTypeName name="com.azienda.interfacceAstratte.model.OracleDbConnection"/>
     <fullyQualifiedTypeName name="com.azienda.interfacceAstratte.model.DbConnection"/>
@@ -52,12 +41,23 @@
     <fullyQualifiedTypeName name="com.azienda.collection.model.Persona"/>
     <fullyQualifiedTypeName name="com.azienda.collection.model.Corso"/>
     <fullyQualifiedTypeName name="java.lang.Math"/>
-    <fullyQualifiedTypeName name="java.util.Arrays"/>
     <fullyQualifiedTypeName name="com.azienda.collection.model.Animale"/>
     <fullyQualifiedTypeName name="com.azienda.collection.model.Zoo"/>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="com.azienda.collections.ui.EsercizioList"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.util.HashSet"/>
+    <fullyQualifiedTypeName name="java.util.Set"/>
+    <fullyQualifiedTypeName name="com.azienda.collections.utilities.FasciaVoto"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.util.Map.Entry"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="java.util.Collection"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.Comparator"/>
+    <fullyQualifiedTypeName name="com.azienda.collections.utilities.PersonaComparatorByNome"/>
+    <fullyQualifiedTypeName name="com.azienda.collections.utilities.PersonaComparatorByNomeCognome"/>
+    <fullyQualifiedTypeName name="java.util.Map"/>
     <fullyQualifiedTypeName name="java.util.Iterator"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.util.Collections"/>
 </qualifiedTypeNameHistroy>
