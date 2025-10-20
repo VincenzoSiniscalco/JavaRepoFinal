@@ -1,0 +1,54 @@
+package com.azienda.springioc.model;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component
+public class Persona {
+	@Autowired
+	@Value("4")
+	private Integer id;
+	
+	private String nome;
+	
+	private String cognome;
+	
+	@Autowired
+	public Persona(@Value("3") Integer id,@Value("Claudio") String nome,@Value("Bianchi") String cognome) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.cognome = cognome;
+	}
+
+	public Persona() {
+		super();
+	}
+	
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	public String getNome() {
+		return nome;
+	}
+	@Autowired
+	public void setNome(@Value("Giovanna") String nome) {
+		this.nome = nome;
+	}
+	public String getCognome() {
+		return cognome;
+	}
+	public void setCognome(String cognome) {
+		this.cognome = cognome;
+	}
+	@Override
+	public String toString() {
+		return "Persona [id=" + id + ", nome=" + nome + ", cognome=" + cognome + "]";
+	}
+	
+	
+}
