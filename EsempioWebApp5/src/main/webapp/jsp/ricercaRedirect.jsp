@@ -1,0 +1,1 @@
+<li><a href="<%=request.getContextPath() %>/jsp/ricerca.jsp">ricerca città per stringa</a>
