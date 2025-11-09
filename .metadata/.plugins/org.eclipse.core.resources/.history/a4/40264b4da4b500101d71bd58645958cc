@@ -1,3 +1,0 @@
-<li><a href="<%=request.getContextPath() %>/menu.jsp">torna al menù</a> </li>
-<li><a href="<%=request.getContextPath() %>/ricerca.jsp">ricerca città</a> </li>
-<li><a href="<%=request.getContextPath() %>/indirizzi.jsp">mostra indirizzi nel database</a> </li>

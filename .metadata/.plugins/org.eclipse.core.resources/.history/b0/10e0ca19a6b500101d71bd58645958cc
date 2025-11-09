@@ -1,3 +1,0 @@
-<li><a href="<%=request.getContextPath() %>/webapp/WEB-INF/views/menu.jsp">torna al menù</a> </li>
-<li><a href="<%=request.getServerName() %>:<%= request.getServerPort()%>/goToRicerca">ricerca città</a> </li>
-<li><a href="<%=request.getContextPath() %>/webapp/WEB-INF/views/indirizzi.jsp">mostra indirizzi nel database</a> </li>
