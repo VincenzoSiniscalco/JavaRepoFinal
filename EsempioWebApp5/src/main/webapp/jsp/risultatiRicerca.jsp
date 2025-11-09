@@ -9,7 +9,7 @@
 </head>
 <body>
 	<%
-		List<String> cittaList= (List<String>) request.getSession().getAttribute("chiaveRisultati");
+		List<String> cittaList= (List<String>) request.getAttribute("chiaveRisultati");
 		if(cittaList.size()==0){
 	%>
 	<div>Nessun risultato</div>
@@ -26,8 +26,9 @@
 		<tr>
 			<td><%=citta %></td>
 				<td>
-                    <form action="<%= request.getContextPath()+"/elimina"%>" method="post">
+                    <form action="<%= request.getContextPath()+"/ricerca"%>" method="post">
                         <input type="hidden" name="citta" value="<%= citta %>">
+                         <input type="hidden" name="operazione" value="elimina">
                         <input type="submit" value="Elimina">
                     </form>
                 </td>

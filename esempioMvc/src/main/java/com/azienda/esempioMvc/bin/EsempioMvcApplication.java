@@ -1,0 +1,13 @@
+package com.azienda.esempioMvc.bin;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication(scanBasePackages = {"com.azienda.esempioMvc.controller"})
+public class EsempioMvcApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(EsempioMvcApplication.class, args);
+	}
+
+}

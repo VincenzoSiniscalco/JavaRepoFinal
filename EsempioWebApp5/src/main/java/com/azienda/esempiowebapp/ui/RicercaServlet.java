@@ -12,21 +12,44 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 @WebServlet("/ricerca")
 public class RicercaServlet extends HttpServlet{
+	private List<String> lista= new ArrayList<>();
+
+
+	public RicercaServlet() {
+		lista.add("Roma");
+		lista.add("Napoli");
+		lista.add("Milano");
+		lista.add("Torino");
+		lista.add("Firenze");
+	}
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		try {
-			List<String> lista= Arrays.asList("Roma","Napoli","Milano","Torino","Firenze");
-			String campoInserito= req.getParameter("citta");
-			List<String> trovati= new ArrayList<String>();
-			for(String citta:lista) {
-				if(citta.toUpperCase().contains(campoInserito)) {
-					trovati.add(citta);
-				}
-					
-			}
-			req.getSession().setAttribute("chiaveRisultati", trovati);
 			
-			req.getRequestDispatcher("/jsp/risultatiRicerca.jsp").forward(req, resp);
+			String campoInserito= req.getParameter("citta");
+
+			if(req.getParameter("operazione").equals("ricerca")) {
+
+			List<String> trovati= new ArrayList<String>();
+				for(String citta:lista) {
+					if(citta.toUpperCase().contains(campoInserito)) {
+						trovati.add(citta);
+					}
+				}
+				req.setAttribute("chiaveRisultati", trovati);
+
+				req.getRequestDispatcher("/jsp/risultatiRicerca.jsp").forward(req, resp);
+			}else if(req.getParameter("operazione").equals("elimina")){
+				String cittaDaEliminare = req.getParameter("citta");
+				if (lista != null && lista.contains(cittaDaEliminare)) {
+					lista.remove(cittaDaEliminare);
+				}
+				resp.sendRedirect(req.getContextPath()+"/ricerca?operazione=ricerca&citta=");
+			}
+
+
+
+
 		} catch (Exception e) {
 			e.printStackTrace();
 			req.getRequestDispatcher("/jsp/errore.jsp").forward(req, resp);

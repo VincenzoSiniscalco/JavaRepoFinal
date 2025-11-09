@@ -1,0 +1,120 @@
+package com.azienda.esempioMvc3.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.azienda.esempioMvc3.service.ServiceIndirizzo;
+
+@Controller
+public class IndirizziController {
+	
+	
+	@Autowired
+	private ServiceIndirizzo serviceIndirizzo;
+	
+	
+	@GetMapping("/indirizzo")
+	public String indirizzo(Model model) {		//modificare catch con exception ad-hoc per i metodi
+		try {
+			model.addAttribute("listaIndirizzi",serviceIndirizzo.read());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "indirizzi";
+	}
+	@GetMapping("/indirizzi/{citta}")
+	public String cercaIndirizzoByCitta(@PathVariable("citta") String citta,Model model) {
+		try {
+			model.addAttribute("listaIndirizziTrovati",serviceIndirizzo.readByCittà(citta));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "indirizziTrovati";
+	}
+
+	@GetMapping("/goToMenu")
+	public String goToMenu() {
+		return "menu";
+	}
+	@GetMapping("/goToRicerca")
+	public String goToRicerca() {
+		return "ricerca";
+	}
+	@ModelAttribute("chiaveIndirizzo")
+	public ParametriRicerca initIndirizzoForm() {
+		return new ParametriRicerca("","");
+	}
+	@PostMapping("/ricerca")
+	public String ricerca(@ModelAttribute("chiaveIndirizzo") ParametriRicerca p,Model model) {
+		try {
+			model.addAttribute("listaIndirizziTrovati",serviceIndirizzo.readByCittàAndVia(p.getCitta(), p.getVia()));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "indirizziTrovati";
+	}
+	@GetMapping("/goToInserisci")
+	public String goToInserisci() {
+		return "inserisci";
+	}
+	@ModelAttribute("chiaveInserimentoIndirizzo")
+	public ParametriInserimento initInserimentoForm() {
+		return new ParametriInserimento("","",null);
+	}
+	@PostMapping("/inserisci")
+	public String inserisci(@ModelAttribute("chiaveInserimentoIndirizzo")ParametriInserimento p,Model model) {
+		try {
+			serviceIndirizzo.insert(p.getCitta(), p.getVia(), p.getCivico());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "redirect:/indirizzo";
+		
+	}
+	@GetMapping("/goToUpdate")
+	public String goToUpdate() {
+		return "update";
+	}
+	@ModelAttribute("chiaveUpdateIndirizzo")
+	public ParametriUpdate initUpdateForm() {
+		return new ParametriUpdate("","",null,"","",null);
+	}
+	@PostMapping("/update")
+	public String update(@ModelAttribute("chiaveUpdateIndirizzo")ParametriUpdate p,Model model) {
+		try {
+			serviceIndirizzo.update(p.getCittaDaAggiornare(), p.getViaDaAggiornare(), p.getCivicoDaAggiornare(), p.getCittaAggiornata(), p.getViaAggiornata(), p.getCivicoAggiornata());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "redirect:/indirizzo";
+		
+	}
+	@PostMapping("/updateParziale")
+	public String updateParziale(@RequestParam("citta")String citta,@RequestParam("via")String via,@RequestParam("civico")Integer civico,@RequestParam("id")Integer id,Model model) {
+		try {
+			serviceIndirizzo.updateParziale(citta, via, civico,id);
+			model.addAttribute("listaIndirizzi",serviceIndirizzo.read());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "redirect:/indirizzo";
+	}
+	
+	@PostMapping("/elimina")
+	public String elimina(@RequestParam("citta")String citta,@RequestParam("via")String via,@RequestParam("civico")Integer civico,Model model) {
+		try {
+			serviceIndirizzo.remove(citta, via, civico);
+			model.addAttribute("listaIndirizzi",serviceIndirizzo.read());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "redirect:/indirizzo";
+	}
+	
+}

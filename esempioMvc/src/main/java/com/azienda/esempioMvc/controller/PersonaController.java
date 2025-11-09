@@ -1,0 +1,66 @@
+package com.azienda.esempioMvc.controller;
+
+import java.util.Arrays;
+import java.util.List;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
+
+import com.azienda.esempioMvc.model.Persona;
+
+@Controller
+//@SessionAttributes({"chiaveRegistrazione"})
+public class PersonaController {
+	@GetMapping("/primo")
+	public String primo(Model model) {
+		Persona persona= new Persona("Mario", "Rossi");
+		model.addAttribute("chiavePersona",persona);
+		return "persona";
+	}
+	@GetMapping("/gotohome")
+	public String goToHome() {
+		return "home";
+	}
+	//localhost:8080/persona?nome=Mario&cognome=rossi
+	@GetMapping("/persona")
+	public String persona(@RequestParam("nome")String n,@RequestParam("cognome") String c, Model model) {
+		Persona p= new Persona(n,c);
+		model.addAttribute("chiavePersona",p);
+		return "persona";
+	}
+	
+	//localhost:8080/persona2/Mario/Rossi
+	@GetMapping("/persona2/{nome}/{cognome}")
+	public String persona2(@PathVariable("nome")String n,@PathVariable("cognome")String c,Model model) {
+		Persona p= new Persona(n,c);
+		model.addAttribute("chiavePersona",p);
+		return "persona";
+	}
+	
+	@GetMapping("/persona3")
+	public String persona3(Model model) {
+		List<Persona> persone= Arrays.asList(new Persona("Mario","Rossi"),new Persona("Laura","Verdi"), new Persona("Claudia","Bianchi"));
+		model.addAttribute("listaPersone",persone);
+		return "elencoPersone";
+	}
+	
+	@GetMapping("/goToRegistra")
+	public String goToRegistra() {
+		return "registra";
+	}
+	@ModelAttribute("chiaveRegistrazione")
+	public Persona initForm() {
+		return new Persona("","");
+	}
+	@PostMapping("/registra")
+	public String registra(@ModelAttribute("chiaveRegistrazione") Persona p, Model model) {
+		model.addAttribute("chiavePersona",p);
+		return "persona";
+	}
+}

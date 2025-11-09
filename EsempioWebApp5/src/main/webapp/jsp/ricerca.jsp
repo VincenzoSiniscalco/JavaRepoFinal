@@ -10,6 +10,7 @@
 		<form action="<%= request.getContextPath()+"/ricerca"%>" method="get">
 			Ricerca<input type="text" name="citta">
 			<br>
+                <input type="hidden" name="operazione" value="ricerca">
 				<input type="submit" value="invia">
 		</form>
 	<jsp:include page="menuRedirect.jsp"></jsp:include>

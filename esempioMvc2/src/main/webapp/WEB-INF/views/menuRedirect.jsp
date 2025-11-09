@@ -1,0 +1,5 @@
+<li><a href="http://<%=request.getServerName() %>:<%= request.getServerPort()%>/goToMenu">torna al menù</a> </li>
+<li><a href="http://<%=request.getServerName() %>:<%= request.getServerPort()%>/goToRicerca">ricerca città</a> </li>
+<li><a href="http://<%=request.getServerName() %>:<%= request.getServerPort()%>/indirizzo">mostra indirizzi nel database</a> </li>
+<li><a href="http://<%=request.getServerName() %>:<%= request.getServerPort()%>/goToInserisci">inserisci indirizzo nel database</a> </li>
+<li><a href="http://<%=request.getServerName() %>:<%= request.getServerPort()%>/goToUpdate">aggiorna indirizzo nel database</a> </li>
