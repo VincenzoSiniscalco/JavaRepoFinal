@@ -1,0 +1,5 @@
+package com.azienda.esempioMvc3.exception;
+
+public class IndirizzoAlreadyExistException extends Exception {
+
+}

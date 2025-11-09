@@ -1,0 +1,102 @@
+package com.azienda.esempioMvc2.controller;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import com.azienda.esempioMvc2.model.Indirizzo;
+
+@Controller
+public class IndirizziController {
+	private List<Indirizzo> indirizzi= new ArrayList<Indirizzo>();
+	
+	public IndirizziController() {
+		indirizzi.add(new Indirizzo("Roma","Piazza di Spagna",1));
+		indirizzi.add(new Indirizzo("Milano","Via Cavour",23));
+		indirizzi.add(new Indirizzo("Milano","Via Giosuè Carducci",48));
+		indirizzi.add(new Indirizzo("Milano","Piazza Della Libertà",60));
+		indirizzi.add(new Indirizzo("Manfredonia","Via Giuseppe Mazzini",43));
+		indirizzi.add(new Indirizzo("Napoli","Via della Croce",21));
+		indirizzi.add(new Indirizzo("Torino","Corso Brunelleschi",75));
+	}
+	
+	@GetMapping("/indirizzo")
+	public String indirizzo(Model model) {
+		model.addAttribute("listaIndirizzi",indirizzi);
+		return "indirizzi";
+	}
+	@GetMapping("/indirizzi/{citta}")
+	public String cercaIndirizzoByCitta(@PathVariable("citta") String citta,Model model) {
+		List<Indirizzo> trovati= new ArrayList<Indirizzo>();
+		for(Indirizzo i:indirizzi) {
+			if(i.getCitta().equals(citta)) {
+				trovati.add(i);
+			}
+		}
+		
+		model.addAttribute("listaIndirizziTrovati",trovati);
+		return "indirizziTrovati";
+	}
+
+	@GetMapping("/goToMenu")
+	public String goToMenu() {
+		return "menu";
+	}
+	@GetMapping("/goToRicerca")
+	public String goToRicerca() {
+		return "ricerca";
+	}
+	@ModelAttribute("chiaveIndirizzo")
+	public ParametriRicerca initIndirizzoForm() {
+		return new ParametriRicerca("","");
+	}
+	@PostMapping("/ricerca")
+	public String ricerca(@ModelAttribute("chiaveIndirizzo") ParametriRicerca p,Model model) {
+		List<Indirizzo> trovati= new ArrayList<Indirizzo>();
+		for(Indirizzo i:indirizzi) {
+			if(i.getCitta().equals(p.getCitta())&&i.getVia().equals(p.getVia())) {
+				trovati.add(i);
+			}
+		}
+		model.addAttribute("listaIndirizziTrovati",trovati);
+		return "indirizziTrovati";
+	}
+	@GetMapping("/goToInserisci")
+	public String goToInserisci() {
+		return "inserisci";
+	}
+	@ModelAttribute("chiaveInserimentoIndirizzo")
+	public ParametriInserimento initInserimentoForm() {
+		return new ParametriInserimento("","",null);
+	}
+	@PostMapping("/inserisci")
+	public String inserisci(@ModelAttribute("chiaveInserimentoIndirizzo")ParametriInserimento p,Model model) {
+		indirizzi.add(new Indirizzo(p.getCitta(),p.getVia(),p.getCivico()));
+		model.addAttribute("listaIndirizzi",indirizzi);
+		return "indirizzi";
+		
+	}
+	@GetMapping("/goToUpdate")
+	public String goToUpdate() {
+		return "update";
+	}
+	@ModelAttribute("chiaveUpdateIndirizzo")
+	public ParametriUpdate initUpdateForm() {
+		return new ParametriUpdate("","",null,"","",null);
+	}
+	@PostMapping("/update")
+	public String update(@ModelAttribute("chiaveUpdateIndirizzo")ParametriUpdate p,Model model) {
+		indirizzi.removeIf(i->p.getCittaDaAggiornare()!=null&&p.getViaDaAggiornare()!=null&&p.getCivicoDaAggiornare()!=null);
+		Indirizzo i= new Indirizzo(p.getCittaAggiornata(),p.getViaAggiornata(),p.getCivicoAggiornata());
+		indirizzi.add(i);
+		model.addAttribute("listaIndirizzi",indirizzi);
+		return "indirizzi";
+		
+	}
+}

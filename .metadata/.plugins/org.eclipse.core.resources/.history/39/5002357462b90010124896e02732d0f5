@@ -1,0 +1,15 @@
+package com.azienda.esempioRest3.bin;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+
+@SpringBootApplication(scanBasePackages = {"com.azienda.esempioRest3.controller","com.azienda.esempioRest3.service"})
+@EntityScan(basePackages = {"com.azienda.esempioRest3.model"})
+public class EsempioRest3Application {
+
+	public static void main(String[] args) {
+		SpringApplication.run(EsempioRest3Application.class, args);
+	}
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.azienda.eccezioni.utilities.NumberValidator&apos; to &apos;Controller&apos;&#x0D;&#x0A;- Original project: &apos;EsException2&apos;&#x0D;&#x0A;- Original element: &apos;com.azienda.eccezioni.utilities.NumberValidator&apos;&#x0D;&#x0A;- Renamed element: &apos;com.azienda.eccezioni.utilities.Controller&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update fully qualified names in &apos;*&apos; files&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;NumberValidator&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.azienda.eccezioni.utilities{NumberValidator.java[NumberValidator" matchStrategy="1" name="Controller" patterns="*" qualified="true" references="true" similarDeclarations="false" stamp="1759936231071" textual="false" version="1.0"/>
+</session>

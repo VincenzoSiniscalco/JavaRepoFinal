@@ -1,0 +1,5 @@
+package com.azienda.esempioMvc3.repository;
+
+public class IndirizzoRepository {
+
+}

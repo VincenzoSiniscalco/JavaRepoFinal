@@ -1,0 +1,29 @@
+package com.azienda.esempioMvc.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.azienda.esempioMvc.model.Persona;
+
+@Controller
+public class PersonaController {
+	@GetMapping("/primo")
+	public String primo(Model model) {
+		Persona persona= new Persona("Mario", "Rossi");
+		model.addAttribute("chiavePersona",persona);
+		return "persona";
+	}
+	@GetMapping("/gotohome")
+	public String goToHome() {
+		return "home";
+	}
+	//localhost:8080/persona?nome=Mario&cognome=rossi
+	@GetMapping("/persona")
+	public String persona(@RequestParam("nome")String n,@RequestParam("cognome") String c, Model model) {
+		Persona p= new Persona(n,c);
+		model.addAttribute("chiavePersona",p);
+		return "persona";
+	}
+}

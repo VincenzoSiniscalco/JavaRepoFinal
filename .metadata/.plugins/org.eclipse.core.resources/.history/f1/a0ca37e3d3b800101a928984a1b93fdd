@@ -1,0 +1,60 @@
+package com.azienda.esempioRest2.repository;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.azienda.esempioRest2.model.Localita;
+
+public class LocalitaRepository {
+	
+	List<Localita> localita=null;
+	
+	public LocalitaRepository() {
+		localita= new ArrayList<Localita>();
+		localita.add(new Localita(1,"Roma",22.5f));
+		localita.add(new Localita(2,"Firenze",18.4f));
+		localita.add(new Localita(3,"Torino",12.9f));
+	}
+	
+	private Localita ricercaById(Integer id) {
+		Localita l=null;
+		for(Localita loc:localita) {
+			if(loc.getId().equals(id)) {
+				l=loc;
+				break;
+			}
+		}
+		return l;
+	}
+
+	private Localita ricercaByNome(String nome) {
+		Localita l=null;
+		for(Localita loc:localita) {
+			if(loc.getNome().equals(nome)) {
+				l=loc;
+				break;
+			}
+		}
+		return l;
+	}
+
+	private List<Localita> ricercaByTemperaturaUnder(Float temperatura) {
+		List<Localita> locFredde= new ArrayList<Localita>();
+		for(Localita loc:localita) {
+			if(loc.getTemperatura()<=temperatura) {
+				locFredde.add(loc);
+			}
+		}
+		return locFredde;
+	}
+
+	private List<Localita> ricercaByTemperaturaOver(Float temperatura) {
+		List<Localita> locCalde= new ArrayList<Localita>();
+		for(Localita loc:localita) {
+			if(loc.getTemperatura()>=temperatura) {
+				locCalde.add(loc);
+			}
+		}
+		return locCalde;
+	}
+}

@@ -1,0 +1,13 @@
+package com.azienda.esempioMvc2.bin;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class EsempioMvc2Application {
+
+	public static void main(String[] args) {
+		SpringApplication.run(EsempioMvc2Application.class, args);
+	}
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Lista.java&apos; to &apos;EsInterfacceAstratte4/src/com.azienda.interfacceastratte.model&apos;&#x0D;&#x0A;- Original project: &apos;EsInterfacceAstratte4&apos;&#x0D;&#x0A;- Destination element: &apos;EsInterfacceAstratte4/src/com.azienda.interfacceastratte.model&apos;&#x0D;&#x0A;- Original element: &apos;com.azienda.interfacceastratte.model.Lista.java&apos;" description="Copy compilation unit" destination="/src&lt;com.azienda.interfacceastratte.model" element1="/src&lt;com.azienda.interfacceastratte.model{Lista.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1759840971676" units="1" version="1.0"/>
+</session>

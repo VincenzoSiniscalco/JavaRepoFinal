@@ -1,0 +1,210 @@
+package com.azienda.esempioMvc3.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.azienda.esempioMvc3.exception.IndirizzoAlreadyExistException;
+import com.azienda.esempioMvc3.exception.IndirizzoNotExistException;
+import com.azienda.esempioMvc3.exception.IndirizzoNullException;
+import com.azienda.esempioMvc3.exception.IsStringException;
+import com.azienda.esempioMvc3.exception.NotIntegerException;
+import com.azienda.esempioMvc3.model.Indirizzo;
+import com.azienda.esempioMvc3.repository.IndirizzoRepository;
+
+@Service
+@Transactional
+public class ServiceIndirizzo {
+	@Autowired
+	private IndirizzoRepository indirizzoRepository;			//IMPLEMENTARE CONTROLLI ANCHE NEL CONTROLLER
+	
+	public void riempiDb() throws IsStringException, NotIntegerException{
+        try {
+			insert("Roma", "Piazza di Spagna", 1);						
+		}catch (IsStringException e) {
+			e.printStackTrace();
+		}catch (NotIntegerException e) {
+			e.printStackTrace();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+        try {
+			insert("Milano", "Via Cavour", 23);
+		}catch (IsStringException e) {
+			e.printStackTrace();
+		}catch (NotIntegerException e) {
+			e.printStackTrace();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+        try {
+			insert("Milano", "Via Giosuè Carducci", 48);
+		}catch (IsStringException e) {
+			e.printStackTrace();
+		}catch (NotIntegerException e) {
+			e.printStackTrace();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+        try {
+			insert("Milano", "Piazza Della Libertà", 60);
+		}catch (IsStringException e) {
+			e.printStackTrace();
+		}catch (NotIntegerException e) {
+			e.printStackTrace();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+        try {
+			insert("Manfredonia", "Via Giuseppe Mazzini", 43);
+		}catch (IsStringException e) {
+			e.printStackTrace();
+		}catch (NotIntegerException e) {
+			e.printStackTrace();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+        try {
+			insert("Napoli", "Via della Croce", 21);
+		}catch (IsStringException e) {
+			e.printStackTrace();
+		}catch (NotIntegerException e) {
+			e.printStackTrace();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+        try {
+			insert("Torino", "Corso Brunelleschi", 75);
+		}catch (IsStringException e) {
+			e.printStackTrace();
+		}catch (NotIntegerException e) {
+			e.printStackTrace();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+    }
+	
+	public void insert(String citta,String via,Integer civico) throws IsStringException, NotIntegerException,IndirizzoAlreadyExistException {
+		Indirizzo ind = null;
+		
+		if(isString(citta)&&isString(via)&&isInt(civico)) {
+			ind= new Indirizzo(citta,via,civico);
+		}
+		if(indirizzoAlreadyExists(citta, via, civico)) {
+			throw new IndirizzoAlreadyExistException("L'indirizzo già esiste!", null);
+		}
+		indirizzoRepository.save(ind);
+	}
+
+	public List<Indirizzo> read() {
+		return indirizzoRepository.findAll();
+	}
+	public List<Indirizzo> readByCittà(String citta) {
+		return indirizzoRepository.findByCitta(citta);
+	}
+	public List<Indirizzo> readByCittàAndVia(String citta,String via) {
+		return indirizzoRepository.findByCittaAndVia(citta,via);
+	}
+	public Indirizzo update(String citta,String via,Integer civico,String cittaNew,String viaNew,Integer civicoNew) throws IndirizzoNullException, IndirizzoAlreadyExistException, IndirizzoNotExistException {
+		Indirizzo ind= indirizzoRepository.findByCittaAndViaAndCivico(citta,via,civico); 
+		if(ind==null) {
+			throw new IndirizzoNullException("L'indirizzo non esiste!", null);
+		}
+		if(indirizzoAlreadyExists(cittaNew, viaNew, civicoNew)) {
+			throw new IndirizzoAlreadyExistException("L'indirizzo che stai provando ad inserire al posto del vecchio già esiste nel database!", null);
+		}
+		if(indirizzoAlreadyExists(citta, via, civico)) {
+			try {
+				isString(cittaNew);
+				isString(viaNew);
+				ind.setCitta(cittaNew);															 
+				ind.setVia(viaNew);
+			} catch (IsStringException e) {
+				e.printStackTrace();
+			}															     
+			try {
+				isInt(civicoNew);
+				ind.setCivico(civicoNew);
+			} catch (NotIntegerException e) {
+				e.printStackTrace();
+			}
+			indirizzoRepository.save(ind);
+			return ind;
+		}else {
+			throw new IndirizzoNotExistException("L'indirizzo non esiste!", null);
+		}
+		
+	}
+	public Indirizzo updateParziale(String citta,String via,Integer civico,Integer id) throws IndirizzoNullException, IndirizzoNotExistException, IndirizzoAlreadyExistException {
+		Indirizzo ind= indirizzoRepository.findById(id).orElse(null); 
+		if(ind==null&&id==null) {
+			throw new IndirizzoNullException("L'indirizzo non esiste!", null);
+		}	
+		if(indirizzoAlreadyExists(citta, via, civico)) {
+			try {
+				isString(citta);
+				isString(via);
+				ind.setCitta(citta);															 
+				ind.setVia(via);
+			} catch (IsStringException e) {
+				e.printStackTrace();
+			}															     
+			try {
+				isInt(civico);
+				ind.setCivico(civico);
+			} catch (NotIntegerException e) {
+				e.printStackTrace();
+			}
+			indirizzoRepository.save(ind);
+			return ind;
+		}else {
+			throw new IndirizzoNotExistException("L'indirizzo "+citta+" "+via+" "+" "+civico+" non esiste nel database!", null);
+		}
+		
+	}
+	
+	public void remove(String citta,String via,Integer civico) throws IndirizzoNullException, IndirizzoAlreadyExistException, IndirizzoNotExistException {						
+		Indirizzo ind= indirizzoRepository.findByCittaAndViaAndCivico(citta,via,civico); 
+		if(ind==null) {
+			throw new IndirizzoNullException("L'indirizzo non esiste!", null);
+		}	
+		if(indirizzoAlreadyExists(citta, via, civico)) {
+			try {
+				isString(citta);
+				isString(via);
+			} catch (IsStringException e) {
+				e.printStackTrace();
+			}															
+			try {
+				isInt(civico);
+			} catch (NotIntegerException e) {
+				e.printStackTrace();
+			}
+			Integer idRemove=ind.getId();													
+			indirizzoRepository.deleteById(idRemove);
+			}else {
+				throw new IndirizzoNotExistException("L'indirizzo "+citta+" "+via+" "+" "+civico+" non esiste nel database!", null);
+			}
+		
+	}
+	private boolean indirizzoAlreadyExists(String citta,String via,Integer civico) throws IndirizzoAlreadyExistException {
+		Indirizzo ind= indirizzoRepository.findByCittaAndViaAndCivico(citta,via,civico);
+		if(ind!=null) {
+			throw new IndirizzoAlreadyExistException("L'indirizzo esiste già nel database!",null);
+		}
+		return true;
+	}
+	private boolean isString(String s) throws IsStringException {
+		if(s.isEmpty()||s.isBlank()) {
+			throw new IsStringException("Non hai inserito una stringa valida!",null);
+		}return true;
+	}
+	private boolean isInt(Integer i) throws NotIntegerException {
+		if(i==null) {
+			throw new NotIntegerException("Il campo non contiene un numero.",null);
+		}
+		return true;
+	}
+}

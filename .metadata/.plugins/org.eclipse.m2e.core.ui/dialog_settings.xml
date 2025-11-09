@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="C:\eclipse-jee-2025-09-Workspace\esempioRestClient"/>
+			<item value="C:\eclipse-jee-2025-09-Workspace\esempioRest3"/>
+			<item value="C:\eclipse-jee-2025-09-Workspace\esempioRest2"/>
+			<item value="C:\eclipse-jee-2025-09-Workspace\esempioRest"/>
+			<item value="C:\eclipse-jee-2025-09-Workspace\esempioMvc3"/>
+			<item value="C:\eclipse-jee-2025-09-Workspace\esempioSpringData3"/>
+			<item value="C:\eclipse-jee-2025-09-Workspace\EsempioSpringData2"/>
+			<item value="C:\eclipse-jee-2025-09-Workspace\esempioSpringData"/>
+			<item value="C:\eclipse-jee-2025-09-Workspace\esempioSpringBoot3"/>
+			<item value="C:\eclipse-jee-2025-09-Workspace\esempioSpringBoot2"/>
+			<item value="C:\eclipse-jee-2025-09-Workspace\esempioSpringBoot"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+</section>

@@ -1,0 +1,108 @@
+package com.azienda.esempioMvc3.controller;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.azienda.esempioMvc3.model.Indirizzo;
+import com.azienda.esempioMvc3.service.ServiceIndirizzo;
+
+@Controller
+public class IndirizziController {
+	private List<Indirizzo> indirizzi= new ArrayList<Indirizzo>();
+	
+	@Autowired
+	private ServiceIndirizzo serviceIndirizzo;
+	
+	
+	@GetMapping("/indirizzo")
+	public String indirizzo(Model model) {
+		model.addAttribute("listaIndirizzi",serviceIndirizzo.read());
+		return "indirizzi";
+	}
+	@GetMapping("/indirizzi/{citta}")
+	public String cercaIndirizzoByCitta(@PathVariable("citta") String citta,Model model) {
+		List<Indirizzo> trovati= new ArrayList<Indirizzo>();
+		for(Indirizzo i:indirizzi) {
+			if(i.getCitta().equals(citta)) {
+				trovati.add(i);
+			}
+		}
+		
+		model.addAttribute("listaIndirizziTrovati",serviceIndirizzo.readByCittà(citta));
+		return "indirizziTrovati";
+	}
+
+	@GetMapping("/goToMenu")
+	public String goToMenu() {
+		return "menu";
+	}
+	@GetMapping("/goToRicerca")
+	public String goToRicerca() {
+		return "ricerca";
+	}
+	@ModelAttribute("chiaveIndirizzo")
+	public ParametriRicerca initIndirizzoForm() {
+		return new ParametriRicerca("","");
+	}
+	@PostMapping("/ricerca")
+	public String ricerca(@ModelAttribute("chiaveIndirizzo") ParametriRicerca p,Model model) {
+		List<Indirizzo> trovati= new ArrayList<Indirizzo>();
+		for(Indirizzo i:indirizzi) {
+			if(i.getCitta().equals(p.getCitta())&&i.getVia().equals(p.getVia())) {
+				trovati.add(i);
+			}
+		}
+		model.addAttribute("listaIndirizziTrovati",serviceIndirizzo.readByCittàAndVia(p.getCitta(), p.getVia()));
+		return "indirizziTrovati";
+	}
+	@GetMapping("/goToInserisci")
+	public String goToInserisci() {
+		return "inserisci";
+	}
+	@ModelAttribute("chiaveInserimentoIndirizzo")
+	public ParametriInserimento initInserimentoForm() {
+		return new ParametriInserimento("","",null);
+	}
+	@PostMapping("/inserisci")
+	public String inserisci(@ModelAttribute("chiaveInserimentoIndirizzo")ParametriInserimento p,Model model) {
+		indirizzi.add(new Indirizzo(p.getCitta(),p.getVia(),p.getCivico()));
+		model.addAttribute("listaIndirizzi",serviceIndirizzo);
+		return "indirizzi";
+		
+	}
+	@GetMapping("/goToUpdate")
+	public String goToUpdate() {
+		return "update";
+	}
+	@ModelAttribute("chiaveUpdateIndirizzo")
+	public ParametriUpdate initUpdateForm() {
+		return new ParametriUpdate("","",null,"","",null);
+	}
+	@PostMapping("/update")
+	public String update(@ModelAttribute("chiaveUpdateIndirizzo")ParametriUpdate p,Model model) {
+		Indirizzo indDelete= new Indirizzo(p.getCittaDaAggiornare(),p.getViaDaAggiornare(),p.getCivicoDaAggiornare());
+		indirizzi.remove(indDelete);
+		Indirizzo i= new Indirizzo(p.getCittaAggiornata(),p.getViaAggiornata(),p.getCivicoAggiornata());
+		indirizzi.add(i);
+		model.addAttribute("listaIndirizzi",indirizzi);
+		return "indirizzi";
+		
+	}
+	@PostMapping("/elimina")
+	public String elimina(@RequestParam("citta")String citta,@RequestParam("via")String via,@RequestParam("civico")Integer civico,Model model) {
+		Indirizzo indDelete= new Indirizzo(citta,via,civico);
+		indirizzi.remove(indDelete);
+		model.addAttribute("listaIndirizzi",indirizzi);
+		return "redirect:/indirizzo";
+	}
+	
+}

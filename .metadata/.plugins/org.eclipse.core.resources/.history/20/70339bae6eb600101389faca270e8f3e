@@ -1,0 +1,132 @@
+package com.azienda.esempioMvc3.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.azienda.esempioMvc3.exception.IndirizzoNullException;
+import com.azienda.esempioMvc3.exception.IsStringException;
+import com.azienda.esempioMvc3.exception.NotIntegerException;
+import com.azienda.esempioMvc3.model.Indirizzo;
+import com.azienda.esempioMvc3.repository.IndirizzoRepository;
+
+@Service
+@Transactional
+public class ServiceIndirizzo {
+	@Autowired
+	private IndirizzoRepository indirizzoRepository;
+	
+	public void riempiDb() throws IsStringException {
+        try {
+			insert("Roma", "Piazza di Spagna", 1);
+		} catch (IllegalArgumentException e) {
+			e.printStackTrace();
+		}
+        try {
+			insert("Milano", "Via Cavour", 23);
+		} catch (IllegalArgumentException e) {
+			e.printStackTrace();
+		}
+        try {
+			insert("Milano", "Via Giosuè Carducci", 48);
+		} catch (IllegalArgumentException e) {
+			e.printStackTrace();
+		}
+        try {
+			insert("Milano", "Piazza Della Libertà", 60);
+		} catch (IllegalArgumentException e) {
+			e.printStackTrace();
+		}
+        try {
+			insert("Manfredonia", "Via Giuseppe Mazzini", 43);
+		} catch (IllegalArgumentException e) {
+			e.printStackTrace();
+		}
+        try {
+			insert("Napoli", "Via della Croce", 21);
+		} catch (IllegalArgumentException e) {
+			e.printStackTrace();
+		}
+        try {
+			insert("Torino", "Corso Brunelleschi", 75);
+		} catch (IllegalArgumentException e) {
+			e.printStackTrace();
+		}
+    }
+	
+	public void insert(String citta,String via,Integer civico) throws IsStringException {
+		Indirizzo ind = null;
+		if(isString(citta)&&isString(via)&&isInt(civico)) {
+			ind= new Indirizzo(citta,via,civico);
+		}
+		if(indirizzoAlreadyExists(citta,via,civico)) {
+			throw new IllegalArgumentException("L'indirizzo è già presente nel database!");
+		}
+		
+		
+		indirizzoRepository.save(ind);
+	}
+	//implementare metodo controllo campi qui e nel controller
+	public List<Indirizzo> read() {
+		return indirizzoRepository.findAll();
+	}
+	public List<Indirizzo> readByCittà(String citta) {
+		return indirizzoRepository.findByCitta(citta);
+	}
+	public List<Indirizzo> readByCittàAndVia(String citta,String via) {
+		return indirizzoRepository.findByCittaAndVia(citta,via);
+	}
+	public Indirizzo update(String citta,String via,Integer civico,String cittaNew,String viaNew,Integer civicoNew) throws IndirizzoNullException {
+		Indirizzo ind= indirizzoRepository.findByCittaAndViaAndCivico(citta,via,civico); //controllo se utente aggiornato esiste con alreadyExists
+		if(ind==null) {
+			throw new IndirizzoNullException("L'indirizzo non esiste!", null);
+		}
+		try {
+			isString(cittaNew);
+			isString(viaNew);
+			ind.setCitta(cittaNew);															 //controllo se ind ==null
+			ind.setVia(viaNew);
+		} catch (IsStringException e) {
+			e.printStackTrace();
+		}															     //controllo sui campi
+		try {
+			isInt(civicoNew);
+			ind.setCivico(civicoNew);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		indirizzoRepository.save(ind);
+		return ind;
+	}
+	public Indirizzo updateParziale(String citta,String via,Integer civico,Integer id) {
+		Indirizzo ind= indirizzoRepository.findById(id).orElse(null); //controllo se utente aggiornato esiste con alreadyExists
+		ind.setCitta(citta);															 //controllo se ind ==null
+		ind.setVia(via);															     //controllo sui campi
+		ind.setCivico(civico);
+		indirizzoRepository.save(ind);
+		return ind;
+	}
+	
+	public void remove(String citta,String via,Integer civico) {						//controllo sui campi
+		Indirizzo ind= indirizzoRepository.findByCittaAndViaAndCivico(citta,via,civico);//controllo se utente aggiornato esiste con alreadyExists
+		Integer idRemove=ind.getId();													//controllo se ind ==null
+		indirizzoRepository.deleteById(idRemove);
+	}
+	private boolean indirizzoAlreadyExists(String citta,String via,Integer civico) {
+		Indirizzo ind= indirizzoRepository.findByCittaAndViaAndCivico(citta,via,civico);
+		return ind!=null;
+	}
+	private boolean isString(String s) throws IsStringException {
+		if(s.isEmpty()||s.isBlank()) {
+			throw new IsStringException("Non hai inserito una stringa valida!",null);
+		}return true;
+	}
+	private boolean isInt(Integer i) {
+		if(!(i instanceof Integer)) {
+			throw new NotIntegerException("Il campo non contiene un numero.",null);
+		}
+		return i instanceof Integer;
+	}
+}

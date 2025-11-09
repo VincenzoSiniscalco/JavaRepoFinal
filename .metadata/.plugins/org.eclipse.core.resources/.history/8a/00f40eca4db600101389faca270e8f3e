@@ -1,0 +1,5 @@
+<li><a href="http://<%=request.getServerName() %>:<%= request.getServerPort()%>/esempioMvc3/goToMenu">torna al menù</a> </li>
+<li><a href="http://<%=request.getServerName() %>:<%= request.getServerPort()%>/esempioMvc3/goToRicerca">ricerca città</a> </li>
+<li><a href="http://<%=request.getServerName() %>:<%= request.getServerPort()%>/esempioMvc3/indirizzo">mostra indirizzi nel database</a> </li>
+<li><a href="http://<%=request.getServerName() %>:<%= request.getServerPort()%>/esempioMvc3/goToInserisci">inserisci indirizzo nel database</a> </li>
+<li><a href="http://<%=request.getServerName() %>:<%= request.getServerPort()%>/esempioMvc3/goToUpdate">aggiorna indirizzo nel database</a> </li>

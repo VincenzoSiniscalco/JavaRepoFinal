@@ -1,0 +1,5 @@
+package com.azienda.esempioRest2.exception;
+
+public class IsStringException extends Exception {
+
+}

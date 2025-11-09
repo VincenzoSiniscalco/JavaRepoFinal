@@ -1,0 +1,5 @@
+package com.azienda.esempioRest.model;
+
+public class Persona {
+
+}

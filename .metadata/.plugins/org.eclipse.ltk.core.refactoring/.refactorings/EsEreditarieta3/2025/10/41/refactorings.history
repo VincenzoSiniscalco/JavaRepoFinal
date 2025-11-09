@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.azienda.ereditarieta.model.OvverrideEquals&apos; to &apos;OverrideEquals&apos;&#x0D;&#x0A;- Original project: &apos;EsEreditarieta3&apos;&#x0D;&#x0A;- Original element: &apos;com.azienda.ereditarieta.model.OvverrideEquals&apos;&#x0D;&#x0A;- Renamed element: &apos;com.azienda.ereditarieta.model.OverrideEquals&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update fully qualified names in &apos;*&apos; files&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;OvverrideEquals&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.azienda.ereditarieta.model{OvverrideEquals.java[OvverrideEquals" matchStrategy="1" name="OverrideEquals" patterns="*" qualified="true" references="true" similarDeclarations="false" stamp="1759737496640" textual="false" version="1.0"/>
+</session>

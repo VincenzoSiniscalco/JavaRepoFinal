@@ -1,10 +1,48 @@
-/.metadata
-.mvn
-.settings
-target
-.classpath
+# Build output
+target/
+bin/
+out/
+build/
+
+# IDE e editor vari
+.idea/
+.vscode/
+.settings/
 .project
-HELP.md
+.classpath
+
+# Maven e config di build
+.mvn/
 mvnw
 mvnw.cmd
-.gitattributes
+
+# File di sistema
+.DS_Store
+Thumbs.db
+
+# File temporanei
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# File di dipendenze e pacchetti
+*.jar
+*.war
+*.ear
+*.iml
+
+# Backup o output generati
+*.class
+*.ser
+
+# Cartelle nascoste di versionamento o sistema
+.git/
+.svn/
+.hg/
+
+# Altro
+*.env
+.env
+node_modules/

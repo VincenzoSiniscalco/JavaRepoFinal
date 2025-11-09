@@ -1,0 +1,5 @@
+package com.azienda.esempioRest2.model;
+
+public class Localita {
+
+}

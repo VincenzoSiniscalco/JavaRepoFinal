@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.amazon.ereditarieta.model.PArent&apos; to &apos;Parent&apos;&#x0D;&#x0A;- Original project: &apos;EsEreditarieta4&apos;&#x0D;&#x0A;- Original element: &apos;com.amazon.ereditarieta.model.PArent&apos;&#x0D;&#x0A;- Renamed element: &apos;com.amazon.ereditarieta.model.Parent&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update fully qualified names in &apos;*&apos; files&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;PArent&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.amazon.ereditarieta.model{PArent.java[PArent" matchStrategy="1" name="Parent" patterns="*" qualified="true" references="true" similarDeclarations="false" stamp="1759742553255" textual="false" version="1.0"/>
+</session>
