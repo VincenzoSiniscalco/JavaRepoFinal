@@ -1,5 +1,0 @@
-package com.azienda.esempioRest2.exception;
-
-public class NotFloatException extends Exception {
-
-}

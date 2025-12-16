@@ -1,6 +1,2 @@
 #Tomcat publish data
-#Fri Oct 31 12:33:33 CET 2025
-org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\vince\\.m2\\repository\\org\\apache\\tomcat\\embed\\tomcat-embed-el\\10.1.48\\tomcat-embed-el-10.1.48.jar=C\:\\apache-tomcat-10.1.48\\webapps\\esempioMvc3\\WEB-INF\\lib\\tomcat-embed-el-10.1.48.jar
-org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\vince\\.m2\\repository\\org\\apache\\tomcat\\embed\\tomcat-embed-jasper\\10.1.48\\tomcat-embed-jasper-10.1.48.jar=C\:\\apache-tomcat-10.1.48\\webapps\\esempioMvc3\\WEB-INF\\lib\\tomcat-embed-jasper-10.1.48.jar
-org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\vince\\.m2\\repository\\org\\springframework\\spring-web\\6.2.12\\spring-web-6.2.12.jar=C\:\\apache-tomcat-10.1.48\\webapps\\esempioMvc3\\WEB-INF\\lib\\spring-web-6.2.12.jar
-org.eclipse.jst.jee.server\:esempioMvc3=C\:\\apache-tomcat-10.1.48\\webapps\\esempioMvc3
+#Mon Dec 15 15:22:42 CET 2025
