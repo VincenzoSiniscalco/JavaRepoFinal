@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\eclipse-jee-2025-09-Workspace\signUpLogInJWT"/>
 			<item value="C:\eclipse-jee-2025-09-Workspace\esempioRestClient"/>
 			<item value="C:\eclipse-jee-2025-09-Workspace\esempioRest3"/>
 			<item value="C:\eclipse-jee-2025-09-Workspace\esempioRest2"/>

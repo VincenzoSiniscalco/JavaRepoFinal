@@ -1,9 +1,0 @@
-package com.azienda.esempioRest2.exception;
-
-public class NotIntegerException extends Exception {
-
-	public NotIntegerException(String message, Throwable cause) {
-		super(message, cause);
-	}
-	
-}
